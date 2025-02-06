@@ -63,8 +63,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
     url: 'https://drive.google.com/file/d/12c8YP5NtWkrYvrORo3Oeg45AXddtceAM/',
   },
   {
-    key: 'dytto',
-    label: 'Building dytto.app',
+    key: 'build',
+    label: 'dytto.app',
     url: 'https://www.dytto.app',
   },
 ];

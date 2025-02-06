@@ -43,7 +43,6 @@ export default function Profile(): JSX.Element {
         Ayaan Pupala
       </Typography>
       <Typography variant="h5" color="textSecondary" gutterBottom>
-        Full Stack Developer & ML Engineer
       </Typography>
       <SocialLinks />
       <ProfileContent />

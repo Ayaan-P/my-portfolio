@@ -5,6 +5,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
 import DescriptionIcon from '@mui/icons-material/Description';
+import BuildIcon from '@mui/icons-material/Build';
 
 const LinksContainer = styled(Paper)(({ theme }) => ({
   display: 'flex',
@@ -34,6 +35,8 @@ const getIcon = (label: string) => {
       return <EmailIcon />;
     case 'resume':
       return <DescriptionIcon />;
+    case 'dytto.app':
+      return <BuildIcon/>;
     default:
       return undefined;
   }
