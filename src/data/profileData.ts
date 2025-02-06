@@ -63,8 +63,7 @@ export const profileData: ProfileData = {
       id: 1,
       sectionTitle: "Epigeneres Biotech",
       subtitle: "Machine Learning Engineer",
-      aboutText: `- Developed deep learning models for early cancer detection
-- Building ML pipelines and data processing workflows`,
+      aboutText: "- Developed deep learning models for early cancer detection",
       date: "October 2023 - August 2024",
       imgSrc: EpigeneresImg
     },
@@ -72,9 +71,7 @@ export const profileData: ProfileData = {
       id: 2,
       sectionTitle: "Karsun Solutions LLC",
       subtitle: "Software Engineer",
-      aboutText: `- Developed  large-scale web applications for the FAA and GSA
-- Full stack development using React, Node.js, and Cloud technologies
-- Implemented CI/CD pipelines and automated testing frameworks`,
+      aboutText: "- Developed  large-scale web applications for the FAA and GSA",
       date: "March 2021 - september 2023", 
       imgSrc: KarsunImg
     },
@@ -82,8 +79,7 @@ export const profileData: ProfileData = {
       id: 3,
       sectionTitle: "Network International LLC",
       subtitle: "Software Engineering Intern",
-      aboutText: `- Developed payment processing solutions
-- Built microservices and RESTful APIs`,
+      aboutText: `- Developed payment processing solutions`,
       date: "May 2018 - July 2018",
       imgSrc: NetworkImg
     }
