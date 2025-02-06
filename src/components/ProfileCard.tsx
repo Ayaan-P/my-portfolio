@@ -1,4 +1,4 @@
-import { SvgIconComponent } from '@mui/icons-material';
+
 import { Card, Typography, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ProfileCardProps } from '../types/profile';

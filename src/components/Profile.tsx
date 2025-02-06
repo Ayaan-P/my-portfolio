@@ -27,10 +27,10 @@ const ProfileAvatar = styled(Avatar)(({ theme }) => ({
   },
 }));
 
-const NameTitle = styled(Box)(({ theme }) => ({
-  textAlign: 'center',
-  marginBottom: theme.spacing(3),
-}));
+// const NameTitle = styled(Box)(({ theme }) => ({
+//   textAlign: 'center',
+//   marginBottom: theme.spacing(3),
+// }));
 
 export default function Profile(): JSX.Element {
   return (

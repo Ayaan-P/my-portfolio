@@ -10,13 +10,13 @@ const GalleryContainer = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(4),
 }));
 
-interface GalleryImage {
-  id: string;
-  url: string;
-  title: string;
-  description?: string;
-  date?: string;
-}
+// interface GalleryImage {
+//   id: string;
+//   url: string;
+//   title: string;
+//   description?: string;
+//   date?: string;
+// }
 
 
 
