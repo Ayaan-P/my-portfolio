@@ -45,21 +45,26 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     key: 'github',
     label: 'GitHub',
-    url: 'https://github.com/yourusername',
+    url: 'https://github.com/Ayaan-P',
   },
   {
     key: 'linkedin',
     label: 'LinkedIn',
-    url: 'https://linkedin.com/in/yourusername',
+    url: 'https://linkedin.com/in/ayaanpupala',
   },
   {
     key: 'email',
     label: 'Email',
-    url: 'mailto:your.email@example.com',
+    url: 'mailto:pupalaayaan@gmail.com',
   },
   {
     key: 'resume',
     label: 'Resume',
-    url: '/path-to-your-resume.pdf',
+    url: 'https://drive.google.com/file/d/12c8YP5NtWkrYvrORo3Oeg45AXddtceAM/',
+  },
+  {
+    key: 'dytto',
+    label: 'Building dytto.app',
+    url: 'https://www.dytto.app',
   },
 ];
