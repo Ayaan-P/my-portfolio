@@ -1,4 +1,4 @@
-import { Paper, Avatar, Typography, Box } from '@mui/material';
+import { Paper, Avatar, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import SocialLinks from './SocialLinks';
 import ProfileContent from './ProfileContent';
