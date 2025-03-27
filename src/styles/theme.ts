@@ -1,6 +1,15 @@
 import { createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
   palette: {
     mode: 'dark',
     primary: {
@@ -33,16 +42,25 @@ export const theme = createTheme({
       WebkitBackgroundClip: 'text',
       WebkitTextFillColor: 'transparent',
       textShadow: '0 2px 10px rgba(197, 165, 114, 0.2)',
+      '@media (max-width:600px)': {
+        fontSize: '1.8rem',
+      },
     },
     h5: {
       fontWeight: 500,
       letterSpacing: '0.01em',
       opacity: 0.9,
+      '@media (max-width:600px)': {
+        fontSize: '1.1rem',
+      },
     },
     h6: {
       fontWeight: 600,
       letterSpacing: '0.02em',
       color: '#C5A572',
+      '@media (max-width:600px)': {
+        fontSize: '1rem',
+      },
     },
     subtitle1: {
       fontWeight: 600,
@@ -73,6 +91,12 @@ export const theme = createTheme({
         root: {
           paddingTop: '2rem',
           paddingBottom: '2rem',
+          '@media (max-width:600px)': {
+            paddingTop: '1rem',
+            paddingBottom: '1rem',
+            paddingLeft: '0.75rem',
+            paddingRight: '0.75rem',
+          },
         },
       },
     },

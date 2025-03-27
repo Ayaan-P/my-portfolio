@@ -23,8 +23,11 @@ const ProfileContainer = styled(Paper)(({ theme }) => ({
     left: 0,
     right: 0,
     height: '200px',
-   
     zIndex: -1,
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(3, 2),
+    minHeight: 200,
   },
 }));
 
@@ -38,6 +41,12 @@ const ProfileAvatar = styled(Avatar)(({ theme }) => ({
   '&:hover': {
     transform: 'scale(1.05)',
     boxShadow: '0 12px 40px rgba(0, 0, 0, 0.4)',
+  },
+  [theme.breakpoints.down('sm')]: {
+    width: 140,
+    height: 140,
+    marginBottom: theme.spacing(2),
+    border: '3px solid rgba(255, 255, 255, 0.1)',
   },
 }));
 

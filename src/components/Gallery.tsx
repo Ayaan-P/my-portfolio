@@ -15,6 +15,10 @@ const ImageGrid = styled(Grid)(({ theme }) => ({
   width: '100%',
   margin: 0,
   marginTop: theme.spacing(4),
+  [theme.breakpoints.down('sm')]: {
+    gap: theme.spacing(2),
+    marginTop: theme.spacing(3),
+  },
 }));
 
 const ImageCard = styled(Paper)(({ theme }) => ({
@@ -37,6 +41,12 @@ const ImageCard = styled(Paper)(({ theme }) => ({
     '& .zoom-icon': {
       opacity: 1,
       transform: 'translate(-50%, -50%) scale(1)',
+    },
+  },
+  [theme.breakpoints.down('sm')]: {
+    borderRadius: theme.spacing(1.5),
+    '&:hover': {
+      transform: 'translateY(-4px)',
     },
   },
 }));
@@ -65,6 +75,9 @@ const ImageModal = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   zIndex: theme.zIndex.modal,
   padding: theme.spacing(4),
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(2),
+  },
 }));
 
 const CloseButton = styled(IconButton)(({ theme }) => ({
@@ -76,6 +89,14 @@ const CloseButton = styled(IconButton)(({ theme }) => ({
   '&:hover': {
     backgroundColor: 'rgba(197, 165, 114, 0.2)',
   },
+  [theme.breakpoints.down('sm')]: {
+    top: theme.spacing(1),
+    right: theme.spacing(1),
+    padding: '4px',
+    '& .MuiSvgIcon-root': {
+      fontSize: '1.2rem',
+    },
+  },
 }));
 
 const ModalContent = styled(Box)(({ theme }) => ({
@@ -85,6 +106,10 @@ const ModalContent = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  [theme.breakpoints.down('sm')]: {
+    maxWidth: '95%',
+    maxHeight: '85vh',
+  },
 }));
 
 const ModalImage = styled('img')(({ theme }) => ({
@@ -93,6 +118,10 @@ const ModalImage = styled('img')(({ theme }) => ({
   objectFit: 'contain',
   borderRadius: theme.spacing(1),
   boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+  [theme.breakpoints.down('sm')]: {
+    maxHeight: '60vh',
+    borderRadius: theme.spacing(0.5),
+  },
 }));
 
 const ModalCaption = styled(Box)(({ theme }) => ({
@@ -102,6 +131,11 @@ const ModalCaption = styled(Box)(({ theme }) => ({
   borderRadius: theme.spacing(1),
   width: '100%',
   textAlign: 'center',
+  [theme.breakpoints.down('sm')]: {
+    marginTop: theme.spacing(1),
+    padding: theme.spacing(1.5),
+    borderRadius: theme.spacing(0.5),
+  },
 }));
 
 const Image = styled('img')({
@@ -122,6 +156,9 @@ const ImageOverlay = styled(Box)(({ theme }) => ({
   background: 'linear-gradient(transparent, rgba(0,0,0,0.9))',
   opacity: 0,
   transition: 'opacity 0.3s ease-in-out',
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(1.5),
+  },
 }));
 
 const ZoomIconOverlay = styled(Box)(({ theme }) => ({
@@ -137,6 +174,12 @@ const ZoomIconOverlay = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(0.75),
+    '& .MuiSvgIcon-root': {
+      fontSize: '1.5rem',
+    },
+  },
 }));
 
 export default function Gallery(): JSX.Element {

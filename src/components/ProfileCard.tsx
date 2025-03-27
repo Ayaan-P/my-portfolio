@@ -20,19 +20,14 @@ const StyledCard = styled(Card)(({ theme }) => ({
     transform: 'translateY(-4px)',
     boxShadow: `0 8px 30px rgba(197, 165, 114, 0.15)`,
   },
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '4px',
-    background: 'linear-gradient(90deg, #C5A572, #D4BC8B)',
-    opacity: 0,
-    transition: 'opacity 0.3s ease',
-  },
+  
   '&:hover::before': {
     opacity: 1,
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(2),
+    marginBottom: theme.spacing(3),
+    borderRadius: '12px',
   },
 }));
 
@@ -46,6 +41,13 @@ const ProfileCardHeader = styled(Box)(({ theme }) => ({
   '& .MuiSvgIcon-root': {
     color: theme.palette.primary.main,
     fontSize: '1.8rem',
+  },
+  [theme.breakpoints.down('sm')]: {
+    gap: theme.spacing(1),
+    marginBottom: theme.spacing(2),
+    '& .MuiSvgIcon-root': {
+      fontSize: '1.5rem',
+    },
   },
 }));
 

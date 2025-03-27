@@ -16,12 +16,25 @@ const LinksContainer = styled(Paper)(({ theme }) => ({
   backgroundColor: 'transparent',
   width: '100%',
   maxWidth: '600px',
+  [theme.breakpoints.down('sm')]: {
+    padding: theme.spacing(1),
+    gap: theme.spacing(0.5),
+  },
 }));
 
 const StyledChip = styled(Chip)(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
+  borderRadius: '24px',
+  padding: theme.spacing(1),
   '&:hover': {
     backgroundColor: theme.palette.action.hover,
+  },
+  [theme.breakpoints.down('sm')]: {
+    height: '28px',
+    fontSize: '0.75rem',
+    '& .MuiChip-icon': {
+      fontSize: '1rem',
+    },
   },
 }));
 

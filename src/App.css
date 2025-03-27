@@ -66,6 +66,49 @@
   .mobile-text-sm {
     font-size: 0.9rem !important;
   }
+  
+  .mobile-spacing-sm {
+    margin: 0.5rem !important;
+    padding: 0.5rem !important;
+  }
+  
+  .mobile-hide {
+    display: none !important;
+  }
+  
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+  
+  .mobile-center {
+    text-align: center !important;
+    justify-content: center !important;
+  }
+  
+  .mobile-full-width {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .mobile-small-text {
+    font-size: 0.85rem !important;
+  }
+  
+  .mobile-small-heading {
+    font-size: 1.5rem !important;
+  }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 601px) and (max-width: 960px) {
+  .tablet-padding {
+    padding: 1.5rem !important;
+  }
+  
+  .tablet-spacing {
+    margin: 0.75rem !important;
+    padding: 0.75rem !important;
+  }
 }
 
 /* Background Elements */

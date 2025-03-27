@@ -19,6 +19,10 @@ const LinksContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(2),
   width: '100%',
   maxWidth: '600px',
+  [theme.breakpoints.down('sm')]: {
+    gap: theme.spacing(1),
+    padding: theme.spacing(1),
+  },
 }));
 
 const StyledChip = styled(Chip)(({ theme }) => ({
@@ -35,6 +39,14 @@ const StyledChip = styled(Chip)(({ theme }) => ({
     transform: 'translateY(-3px)',
     boxShadow: '0 6px 15px rgba(0, 0, 0, 0.1)',
     borderColor: theme.palette.primary.main,
+  },
+  [theme.breakpoints.down('sm')]: {
+    height: '28px',
+    fontSize: '0.75rem',
+    padding: '4px 2px',
+    '& .MuiChip-icon': {
+      fontSize: '1rem',
+    },
   },
 }));
 

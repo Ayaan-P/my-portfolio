@@ -1,5 +1,5 @@
 import { Box, Typography, Avatar, Paper } from '@mui/material';
-import { styled } from '@mui/material/styles';
+import { styled, useTheme } from '@mui/material/styles';
 import { SectionContentProps } from '../types/profile';
 import { useEffect, useState } from 'react';
 import ExpandedSectionView from './ExpandedSectionView';
@@ -25,6 +25,11 @@ const ContentContainer = styled(Paper)(({ theme }) => ({
       color: theme.palette.primary.light,
     },
   },
+  [theme.breakpoints.down('sm')]: {
+    gap: theme.spacing(1.5),
+    padding: theme.spacing(1.5),
+    borderRadius: theme.spacing(1.5),
+  },
 }));
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
@@ -36,6 +41,11 @@ const StyledAvatar = styled(Avatar)(({ theme }) => ({
   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
   transition: 'all 0.3s ease',
   overflow: 'hidden',
+  [theme.breakpoints.down('sm')]: {
+    width: 70,
+    height: 70,
+    borderRadius: theme.spacing(1),
+  },
 }));
 
 const TextContent = styled(Box)(({ theme }) => ({
@@ -58,6 +68,9 @@ const DateChip = styled(Box)(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  [theme.breakpoints.down('sm')]: {
+    display: 'none',
+  },
 }));
 
 export default function SectionContent({
@@ -70,6 +83,7 @@ export default function SectionContent({
   index = 0,
   expandedDetails,
 }: SectionContentProps): JSX.Element {
+  const theme = useTheme();
   const [isVisible, setIsVisible] = useState(false);
   const [expandedViewOpen, setExpandedViewOpen] = useState(false);
   
@@ -114,7 +128,12 @@ export default function SectionContent({
           fontWeight="bold" 
           color="primary"
           className="section-title"
-          sx={{ fontSize: '1.1rem' }}
+          sx={{ 
+            fontSize: '1.1rem',
+            [theme.breakpoints.down('sm')]: {
+              fontSize: '0.95rem',
+            }
+          }}
         >
           {sectionTitle}
         </Typography>
@@ -124,7 +143,10 @@ export default function SectionContent({
             sx={{ 
               color: 'rgba(255, 255, 255, 0.8)',
               fontWeight: 500,
-              fontSize: '0.95rem'
+              fontSize: '0.95rem',
+              [theme.breakpoints.down('sm')]: {
+                fontSize: '0.85rem',
+              }
             }}
           >
             {subtitle}
@@ -137,7 +159,11 @@ export default function SectionContent({
             whiteSpace: about ? 'pre-line' : 'normal',
             lineHeight: 1.7,
             color: 'rgba(255, 255, 255, 0.85)',
-            mt: 0.5
+            mt: 0.5,
+            [theme.breakpoints.down('sm')]: {
+              fontSize: '0.8rem',
+              lineHeight: 1.5,
+            }
           }}
         >
           {aboutText}
