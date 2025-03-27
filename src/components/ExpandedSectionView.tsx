@@ -5,9 +5,9 @@ import { SectionContentProps } from '../types/profile';
 
 const ModalContainer = styled(Box)(({ theme }) => ({
   position: 'absolute',
-  top: '50%',
+  top: '10vh',
   left: '50%',
-  transform: 'translate(-50%, -50%)',
+  transform: 'translate(-50%, 0)',
   width: '80%',
   maxWidth: '1000px',
   maxHeight: '90vh',

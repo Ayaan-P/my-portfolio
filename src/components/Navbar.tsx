@@ -1,23 +1,27 @@
 import { useState, useEffect } from 'react';
-import { 
-  AppBar, 
-  Toolbar, 
-  Typography, 
-  Box, 
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
   Container,
-  IconButton,
-  Menu,
-  MenuItem,
+
+  Drawer,
+
   useScrollTrigger,
   Slide,
   useMediaQuery,
   useTheme,
   Button,
-  Divider
+  Divider,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Link, useLocation } from 'react-router-dom';
-import MenuIcon from '@mui/icons-material/Menu';
+
 import HomeIcon from '@mui/icons-material/Home';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
 
@@ -76,32 +80,16 @@ const LogoText = styled(Typography)(({ theme }) => ({
   letterSpacing: '0.02em',
 }));
 
-const MobileMenu = styled(Menu)(({ theme }) => ({
-  '& .MuiPaper-root': {
+const StyledDrawer = styled(Drawer)(({ theme }) => ({
+  '& .MuiDrawer-paper': {
+    width: 240,
     backgroundColor: 'rgba(18, 18, 18, 0.95)',
     backdropFilter: 'blur(15px)',
-    border: '1px solid rgba(255, 255, 255, 0.05)',
-    borderRadius: '12px',
-    marginTop: theme.spacing(1),
-    minWidth: '200px',
-    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-  },
-  '& .MuiMenuItem-root': {
-    padding: '12px 20px',
-    borderRadius: '8px',
-    margin: '4px 8px',
-    transition: 'all 0.2s ease',
-    '&:hover': {
-      backgroundColor: 'rgba(197, 165, 114, 0.1)',
-    },
-    '&.Mui-selected': {
-      backgroundColor: 'rgba(197, 165, 114, 0.15)',
-      '&:hover': {
-        backgroundColor: 'rgba(197, 165, 114, 0.2)',
-      },
-    },
+    borderRight: 'none',
+    boxShadow: theme.shadows[12],
   },
 }));
+
 
 function HideOnScroll(props: NavbarProps & { children: React.ReactElement }) {
   const { children, window } = props;
@@ -121,9 +109,8 @@ export default function Navbar(props: NavbarProps): JSX.Element {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const location = useLocation();
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const open = Boolean(anchorEl);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -139,12 +126,14 @@ export default function Navbar(props: NavbarProps): JSX.Element {
     };
   }, [scrolled]);
 
-  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+
+  const handleDrawerToggle = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+
+  const handleCloseDrawer = () => {
+    setMobileMenuOpen(false);
   };
 
   const isActive = (path: string) => {
@@ -154,6 +143,46 @@ export default function Navbar(props: NavbarProps): JSX.Element {
   const handleLogoClick = () => {
     window.location.href = '/';
   };
+
+  const mobileMenu = (
+    <Box
+      sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}
+    >
+      <Box sx={{ px: 2, py: 2 }}>
+        <Typography variant="subtitle2" color="primary" fontWeight="bold">
+          Navigation
+        </Typography>
+      </Box>
+      <Divider sx={{ my: 1, opacity: 0.1 }} />
+      <List component="nav">
+        <ListItem 
+          button 
+          component={Link} 
+          to="/" 
+          onClick={handleCloseDrawer}
+          selected={location.pathname === '/'}
+        >
+          <ListItemIcon>
+            <HomeIcon sx={{ color: theme.palette.primary.main }} />
+          </ListItemIcon>
+          <ListItemText primary="Home" />
+        </ListItem>
+        <ListItem 
+          button 
+          component={Link} 
+          to="/gallery" 
+          onClick={handleCloseDrawer}
+          selected={location.pathname === '/gallery'}
+        >
+          <ListItemIcon>
+            <PhotoLibraryIcon sx={{ color: theme.palette.primary.main }} />
+          </ListItemIcon>
+          <ListItemText primary="Gallery" />
+        </ListItem>
+      </List>
+    </Box>
+  );
+
 
   return (
     <HideOnScroll {...props} children={
@@ -169,75 +198,27 @@ export default function Navbar(props: NavbarProps): JSX.Element {
       >
         <Container maxWidth="lg">
           <Toolbar disableGutters sx={{ justifyContent: 'space-between' }}>
-            <LogoContainer onClick={handleLogoClick}>
+            <LogoContainer onClick={isMobile ? handleDrawerToggle : handleLogoClick}>
               <LogoText variant="h6">
                 Ayaan Pupala
               </LogoText>
             </LogoContainer>
 
             {isMobile ? (
-              <>
-                <IconButton
-                  edge="end"
-                  color="inherit"
-                  aria-label="menu"
-                  onClick={handleMenu}
-                  sx={{ 
-                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                    '&:hover': {
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    }
+              <StyledDrawer
+                  anchor="left"
+                  open={mobileMenuOpen}
+                  onClose={handleDrawerToggle}
+                  ModalProps={{
+                    keepMounted: true,
                   }}
                 >
-                  <MenuIcon />
-                </IconButton>
-                <MobileMenu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'right',
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  open={open}
-                  onClose={handleClose}
-                >
-                  <Box sx={{ px: 2, py: 1.5 }}>
-                    <Typography variant="subtitle2" color="primary" fontWeight="bold">
-                      Navigation
-                    </Typography>
-                  </Box>
-                  <Divider sx={{ my: 1, opacity: 0.1 }} />
-                  <MenuItem 
-                    component={Link} 
-                    to="/" 
-                    onClick={handleClose}
-                    selected={location.pathname === '/'}
-                    sx={{ display: 'flex', alignItems: 'center' }}
-                  >
-                    <HomeIcon sx={{ mr: 1.5, color: theme.palette.primary.main }} />
-                    Home
-                  </MenuItem>
-                  <MenuItem 
-                    component={Link} 
-                    to="/gallery" 
-                    onClick={handleClose}
-                    selected={location.pathname === '/gallery'}
-                    sx={{ display: 'flex', alignItems: 'center' }}
-                  >
-                    <PhotoLibraryIcon sx={{ mr: 1.5, color: theme.palette.primary.main }} />
-                    Gallery
-                  </MenuItem>
-                </MobileMenu>
-              </>
-            ) : (
+                  {mobileMenu}
+                </StyledDrawer>
+             ) : (
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Link to="/" style={{ textDecoration: 'none' }}>
-                  <NavButton 
+                  <NavButton
                     className={isActive('/')}
                     startIcon={<HomeIcon />}
                     disableElevation
@@ -246,7 +227,7 @@ export default function Navbar(props: NavbarProps): JSX.Element {
                   </NavButton>
                 </Link>
                 <Link to="/gallery" style={{ textDecoration: 'none' }}>
-                  <NavButton 
+                  <NavButton
                     className={isActive('/gallery')}
                     startIcon={<PhotoLibraryIcon />}
                     disableElevation
