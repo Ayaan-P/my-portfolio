@@ -10,6 +10,7 @@ import DTIImg from '../images/DTI.png';
 import BostonImg from '../images/Boston.png';
 import GamePng from '../images/Cliff.png';
 import ChicagoImg from '../images/Chicago.png';
+import CTImg from '../images/CT.png';
 
 
 interface ProfileData {
@@ -55,7 +56,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 1,
       sectionTitle: "Northwestern University",
       subtitle: "Master of Science in Artificial Intelligence",
-      aboutText: "At Northwestern University, I'm pursuing an advanced degree in Artificial Intelligence with a specialized focus on cutting-edge techniques in deep learning, computer vision, and natural language processing",
+      aboutText: "I'm pursuing an advanced degree in Artificial Intelligence with focus on deep learning, computer vision, and natural language processing",
       date: "September 2024 - December 2025",
       imgSrc: NorthwesternImg,
       expandedDetails: {
@@ -81,7 +82,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 2, 
       sectionTitle: "University of Illinois at Urbana-Champaign",
       subtitle: "Bachelor of Science in Computer Engineering",
-      aboutText: "My undergraduate education at the University of Illinois at Urbana-Champaign provided me with a strong foundation in Computer Engineering. The program's rigorous curriculum covered both hardware and software aspects",
+      aboutText: "My undergraduate education provided me with a strong foundation in Computer Engineering. The program's rigorous curriculum covered both hardware and software aspects",
       date: "August 2017 - December 2020",
       imgSrc: UIUCImg,
       expandedDetails: {
@@ -108,7 +109,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 3,
       sectionTitle: "Cathedral and John Connon School",
       subtitle: "ICSE, ISC Science",
-      aboutText: "I completed my secondary education at the Cathedral and John Connon School in Mumbai, India, following the ICSE and ISC Science curriculum ",
+      aboutText: "I completed my secondary education following the ICSE and ISC Science curriculum ",
       date: "May 2017",
       imgSrc: CathedralImg,
       expandedDetails: {
@@ -122,9 +123,9 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
   work: [
     {
       id: 1,
-      sectionTitle: "American Family",
+      sectionTitle: "American Family Insurance",
       subtitle: "Software Engineering Intern",
-      aboutText: "Upcoming internship at American Family Insurance where I'll be working on software solutions in the insurance technology space",
+      aboutText: "Upcoming internship at where I'll be working on software solutions in the insurance technology space",
       date: "June 2025 - August 2025",
       imgSrc: BostonImg,
       expandedDetails: {
@@ -141,7 +142,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 2,
       sectionTitle: "Epigeneres Biotech",
       subtitle: "Machine Learning Engineer",
-      aboutText: "At Epigeneres Biotech, I worked on the developing deep learning models for early cancer detection",
+      aboutText: "I worked on the developing deep learning models for early cancer detection",
       date: "October 2023 - August 2024",
       imgSrc: EpigeneresImg,
       expandedDetails: {
@@ -217,6 +218,28 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
         ]
       }
     },
+    {
+      id: 4,
+      sectionTitle: "Low Dose CT Scan Upscaler",
+      aboutText: "Deep Learning model to enchance the resolution of low dose CT scans using a GAN",
+      date: "2024",
+      imgSrc: CTImg,
+      expandedDetails: {
+        skills: [
+          "Generative Adversarial Networks",
+          "Deep Learning",
+          
+        ],
+        
+        links: [
+          {
+            label: "Project Repository",
+            url: "https://github.com/ayaanpupala/dti-prediction"
+          }
+        ]
+      }
+    },
+    
     {
       id: 2,
       sectionTitle: "Chicago Energy Rating Predictor",

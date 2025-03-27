@@ -13,15 +13,14 @@ const ModalContainer = styled(Box)(({ theme }) => ({
   maxHeight: '90vh',
   overflow: 'auto',
   outline: 'none',
-  border: `2px solid ${theme.palette.primary.main}`,
   borderRadius: theme.spacing(2),
   [theme.breakpoints.down('sm')]: {
     width: '95%',
     maxHeight: '85vh',
-    scrollbarWidth: 'none',
-    msOverflowStyle: 'none',
+    scrollbarWidth: 'none', /* Firefox */
+    msOverflowStyle: 'none',  /* Internet Explorer 10+ */
     '&::-webkit-scrollbar': {
-      display: 'none'
+      display: 'none' /* Chrome, Safari, Opera */
     }
   },
 }));
@@ -33,7 +32,7 @@ const ContentPaper = styled(Paper)(({ theme }) => ({
   borderRadius: theme.spacing(2),
   backgroundColor: 'rgba(26, 26, 26, 0.95)',
   backdropFilter: 'blur(15px)',
-  
+  border: `1px solid ${theme.palette.primary.main}`,
   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3)',
   position: 'relative',
   overflow: 'hidden',
