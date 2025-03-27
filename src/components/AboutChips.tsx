@@ -1,4 +1,4 @@
-import { Chip, Paper } from '@mui/material';
+import { Chip, Paper, Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { ABOUT_CHIPS } from '../constants/profileSections';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -11,21 +11,30 @@ import BiotechIcon from '@mui/icons-material/Biotech';
 import PsychologyIcon from '@mui/icons-material/Psychology';
 import BusinessIcon from '@mui/icons-material/Business';
 
-const LinksContainer = styled(Paper)(({ theme }) => ({
+const LinksContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   flexWrap: 'wrap',
-  gap: theme.spacing(1),
+  gap: theme.spacing(1.5),
   padding: theme.spacing(2),
-  backgroundColor: 'transparent',
   width: '100%',
   maxWidth: '600px',
 }));
 
 const StyledChip = styled(Chip)(({ theme }) => ({
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: 'rgba(26, 26, 26, 0.6)',
+  border: '1px solid rgba(255, 255, 255, 0.05)',
+  borderRadius: '12px',
+  padding: '8px 4px',
+  transition: 'all 0.3s ease',
+  '& .MuiChip-icon': {
+    color: theme.palette.primary.main,
+  },
   '&:hover': {
-    backgroundColor: theme.palette.action.hover,
+    backgroundColor: 'rgba(197, 165, 114, 0.1)',
+    transform: 'translateY(-3px)',
+    boxShadow: '0 6px 15px rgba(0, 0, 0, 0.1)',
+    borderColor: theme.palette.primary.main,
   },
 }));
 
@@ -52,14 +61,18 @@ export default function AboutLinks(): JSX.Element {
   };
 
   return (
-    <LinksContainer elevation={0}>
-      {ABOUT_CHIPS.map((link) => (
+    <LinksContainer>
+      {ABOUT_CHIPS.map((link, index) => (
         <StyledChip
           key={link.key}
           icon={getIcon(link.key)}
           label={link.label}
           onClick={() => handleClick(link.url)}
           clickable
+          sx={{ 
+            animationDelay: `${index * 0.1}s`,
+          }}
+          className="fade-in-delay-1"
         />
       ))}
     </LinksContainer>

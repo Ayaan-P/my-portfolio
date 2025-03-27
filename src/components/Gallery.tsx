@@ -1,7 +1,7 @@
-import { Box, Grid, Typography, CircularProgress } from '@mui/material';
+import { Box, Grid, Typography, CircularProgress, Container, IconButton, Paper } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
-import { PhotoLibrary as PhotoLibraryIcon } from '@mui/icons-material';
+import { PhotoLibrary as PhotoLibraryIcon, Close as CloseIcon, ZoomIn as ZoomInIcon } from '@mui/icons-material';
 import ProfileCard from './ProfileCard';
 import { DriveService, DriveImage } from '../services/driveService';
 
@@ -10,43 +10,47 @@ const GalleryContainer = styled(Box)(({ theme }) => ({
   marginTop: theme.spacing(4),
 }));
 
-// interface GalleryImage {
-//   id: string;
-//   url: string;
-//   title: string;
-//   description?: string;
-//   date?: string;
-// }
-
-
-
 const ImageGrid = styled(Grid)(({ theme }) => ({
-  gap: theme.spacing(2),
+  gap: theme.spacing(3),
   width: '100%',
   margin: 0,
+  marginTop: theme.spacing(4),
 }));
 
-const ImageCard = styled(Box)(({ theme }) => ({
+const ImageCard = styled(Paper)(({ theme }) => ({
   position: 'relative',
   width: '100%',
   paddingTop: '100%', // 1:1 Aspect ratio
   overflow: 'hidden',
-  borderRadius: theme.shape.borderRadius,
+  borderRadius: theme.spacing(2),
   cursor: 'pointer',
-  transition: 'transform 0.3s ease-in-out',
+  transition: 'all 0.3s ease-in-out',
+  boxShadow: '0 6px 20px rgba(0, 0, 0, 0.1)',
+  border: '1px solid rgba(255, 255, 255, 0.05)',
+  backgroundColor: 'rgba(26, 26, 26, 0.6)',
   '&:hover': {
-    transform: 'scale(1.05)',
+    transform: 'translateY(-8px)',
+    boxShadow: '0 12px 30px rgba(0, 0, 0, 0.2)',
     '& .overlay': {
       opacity: 1,
     },
+    '& .zoom-icon': {
+      opacity: 1,
+      transform: 'translate(-50%, -50%) scale(1)',
+    },
   },
 }));
-const LoadingContainer = styled(Box)({
+
+const LoadingContainer = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  minHeight: '200px',
-});
+  minHeight: '300px',
+  width: '100%',
+  '& .MuiCircularProgress-root': {
+    color: theme.palette.primary.main,
+  },
+}));
 
 const ImageModal = styled(Box)(({ theme }) => ({
   position: 'fixed',
@@ -54,13 +58,51 @@ const ImageModal = styled(Box)(({ theme }) => ({
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundColor: 'rgba(0, 0, 0, 0.9)',
+  backgroundColor: 'rgba(0, 0, 0, 0.95)',
   display: 'flex',
+  flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
   zIndex: theme.zIndex.modal,
+  padding: theme.spacing(4),
 }));
 
+const CloseButton = styled(IconButton)(({ theme }) => ({
+  position: 'absolute',
+  top: theme.spacing(2),
+  right: theme.spacing(2),
+  color: 'white',
+  backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  '&:hover': {
+    backgroundColor: 'rgba(197, 165, 114, 0.2)',
+  },
+}));
+
+const ModalContent = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  maxWidth: '90%',
+  maxHeight: '80vh',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+}));
+
+const ModalImage = styled('img')(({ theme }) => ({
+  maxWidth: '100%',
+  maxHeight: '70vh',
+  objectFit: 'contain',
+  borderRadius: theme.spacing(1),
+  boxShadow: '0 10px 30px rgba(0, 0, 0, 0.3)',
+}));
+
+const ModalCaption = styled(Box)(({ theme }) => ({
+  marginTop: theme.spacing(2),
+  padding: theme.spacing(2),
+  backgroundColor: 'rgba(26, 26, 26, 0.8)',
+  borderRadius: theme.spacing(1),
+  width: '100%',
+  textAlign: 'center',
+}));
 
 const Image = styled('img')({
   position: 'absolute',
@@ -77,24 +119,38 @@ const ImageOverlay = styled(Box)(({ theme }) => ({
   left: 0,
   right: 0,
   padding: theme.spacing(2),
-  background: 'linear-gradient(transparent, rgba(0,0,0,0.8))',
+  background: 'linear-gradient(transparent, rgba(0,0,0,0.9))',
   opacity: 0,
   transition: 'opacity 0.3s ease-in-out',
+}));
+
+const ZoomIconOverlay = styled(Box)(({ theme }) => ({
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%) scale(0.8)',
+  opacity: 0,
+  transition: 'all 0.3s ease-in-out',
+  backgroundColor: 'rgba(197, 165, 114, 0.2)',
+  borderRadius: '50%',
+  padding: theme.spacing(1),
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
 }));
 
 export default function Gallery(): JSX.Element {
   const [images, setImages] = useState<DriveImage[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedImage, setSelectedImage] = useState<DriveImage | null>(null); // Add this line
-
+  const [selectedImage, setSelectedImage] = useState<DriveImage | null>(null);
 
   useEffect(() => {
     const loadImages = async () => {
       try {
         setLoading(true);
         const driveService = new DriveService();
-        const fetchedImages = await driveService.listFolderContents(); // Remove the argument
+        const fetchedImages = await driveService.listFolderContents();
         setImages(fetchedImages);
       } catch (err) {
         setError('Failed to load images. Please try again later.');
@@ -115,8 +171,8 @@ export default function Gallery(): JSX.Element {
     setSelectedImage(null);
   };
 
-
-    return (
+  return (
+    <Container maxWidth="lg" className="fade-in">
       <GalleryContainer>
         <ProfileCard
           icon={PhotoLibraryIcon}
@@ -124,61 +180,99 @@ export default function Gallery(): JSX.Element {
           sections={[{
             id: 1,
             sectionTitle: 'My Work',
-            aboutText: 'A collection of my projects and achievements',
-            date: '', // Add empty string or actual date
-            imgSrc: '', // Add empty string or actual image path
-            subtitle: '', // If subtitle is also required, add it
+            aboutText: 'A collection of my projects and achievements. Click on any image to view details.',
+            date: '',
+            imgSrc: '',
+            subtitle: '',
           }]}
           about={false}
         />
 
-      {loading ? (
-        <LoadingContainer>
-          <CircularProgress />
-        </LoadingContainer>
-      ) : error ? (
-        <Typography color="error" align="center">
-          {error}
-        </Typography>
-      ) : (
-        <ImageGrid container>
-          {images.map((image) => (
-            <Grid item xs={12} sm={6} md={4} key={image.id}>
-              <ImageCard onClick={() => handleImageClick(image)}>
-                <Image 
-                  src={image.thumbnailUrl || image.url} 
-                  alt={image.title}
-                />
-                <ImageOverlay className="overlay">
-                  <Typography variant="subtitle1" color="white">
-                    {image.title}
-                  </Typography>
-                  {image.description && (
-                    <Typography variant="body2" color="rgba(255,255,255,0.7)">
-                      {image.description}
-                    </Typography>
-                  )}
-                </ImageOverlay>
-              </ImageCard>
-            </Grid>
-          ))}
-        </ImageGrid>
-      )}
-
-      {selectedImage && (
-        <ImageModal onClick={handleCloseModal}>
-          <Box
-            component="img"
-            sx={{
-              maxWidth: '90%',
-              maxHeight: '90vh',
-              objectFit: 'contain',
+        {loading ? (
+          <LoadingContainer>
+            <CircularProgress size={60} thickness={4} />
+          </LoadingContainer>
+        ) : error ? (
+          <Paper 
+            elevation={0} 
+            sx={{ 
+              p: 3, 
+              mt: 4, 
+              backgroundColor: 'rgba(255, 0, 0, 0.1)',
+              borderRadius: 2,
+              border: '1px solid rgba(255, 0, 0, 0.2)'
             }}
-            src={selectedImage.url}
-            alt={selectedImage.title}
-          />
-        </ImageModal>
-      )}
-    </GalleryContainer>
+          >
+            <Typography color="error" align="center" variant="h6">
+              {error}
+            </Typography>
+          </Paper>
+        ) : (
+          <ImageGrid container>
+            {images.map((image, index) => (
+              <Grid 
+                item 
+                xs={12} 
+                sm={6} 
+                md={4} 
+                key={image.id}
+                sx={{ 
+                  opacity: 0,
+                  animation: 'fadeIn 0.5s ease-out forwards',
+                  animationDelay: `${0.1 + (index * 0.1)}s`
+                }}
+              >
+                <ImageCard elevation={4} onClick={() => handleImageClick(image)}>
+                  <Image 
+                    src={image.thumbnailUrl || image.url} 
+                    alt={image.title}
+                  />
+                  <ImageOverlay className="overlay">
+                    <Typography variant="subtitle1" color="white" fontWeight="bold">
+                      {image.title}
+                    </Typography>
+                    {image.description && (
+                      <Typography variant="body2" color="rgba(255,255,255,0.8)">
+                        {image.description}
+                      </Typography>
+                    )}
+                  </ImageOverlay>
+                  <ZoomIconOverlay className="zoom-icon">
+                    <ZoomInIcon sx={{ color: 'white', fontSize: '2rem' }} />
+                  </ZoomIconOverlay>
+                </ImageCard>
+              </Grid>
+            ))}
+          </ImageGrid>
+        )}
+
+        {selectedImage && (
+          <ImageModal onClick={handleCloseModal}>
+            <CloseButton onClick={(e) => {
+              e.stopPropagation();
+              handleCloseModal();
+            }}>
+              <CloseIcon />
+            </CloseButton>
+            <ModalContent onClick={(e) => e.stopPropagation()}>
+              <ModalImage
+                src={selectedImage.url}
+                alt={selectedImage.title}
+              />
+              <ModalCaption>
+                <Typography variant="h6" color="primary" gutterBottom>
+                  {selectedImage.title}
+                </Typography>
+                {selectedImage.description && (
+                  <Typography variant="body1" color="text.secondary">
+                    {selectedImage.description}
+                  </Typography>
+                )}
+              </ModalCaption>
+            </ModalContent>
+          </ImageModal>
+        )}
+      </GalleryContainer>
+    </Container>
   );
 }

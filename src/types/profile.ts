@@ -10,6 +10,12 @@ export interface ProfileSection {
   date: string;
   imgSrc: string;
   about?: boolean;
+  expandedDetails?: {
+    fullDescription?: string;
+    skills?: string[];
+    achievements?: string[];
+    links?: Array<{label: string, url: string}>;
+  };
 }
 
 export type ProfileData = {
@@ -30,6 +36,13 @@ export interface SectionContentProps {
   date: string;
   imgSrc: string;
   about?: boolean;
+  index?: number;
+  expandedDetails?: {
+    fullDescription?: string;
+    skills?: string[];
+    achievements?: string[];
+    links?: Array<{label: string, url: string}>;
+  };
 }
 export interface SocialLink {
   key: number;
@@ -37,4 +50,3 @@ export interface SocialLink {
   url: string;
   icon?: string;
 }
-
