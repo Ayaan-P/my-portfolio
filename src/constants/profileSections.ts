@@ -1,7 +1,7 @@
 import { SvgIconComponent } from '@mui/icons-material';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
-import PersonIcon from '@mui/icons-material/Person';
+
 import CodeIcon from '@mui/icons-material/Code';
 
 
