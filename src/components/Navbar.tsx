@@ -13,7 +13,6 @@ import {
   useMediaQuery,
   useTheme,
   Button,
-  Avatar,
   Divider
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -21,7 +20,6 @@ import { Link, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import PhotoLibraryIcon from '@mui/icons-material/PhotoLibrary';
-import ProfilePic from "../images/profile.jpg";
 
 interface NavbarProps {
   window?: () => Window;

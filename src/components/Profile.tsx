@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import SocialLinks from './SocialLinks';
 import ProfileContent from './ProfileContent';
 import ProfilePic from "../images/profile.jpg";
-import AboutLinks from './AboutChips';
+
 
 const ProfileContainer = styled(Paper)(({ theme }) => ({
   maxWidth: '100%',
