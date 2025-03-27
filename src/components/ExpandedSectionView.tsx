@@ -1,6 +1,6 @@
-import { Box, Typography, Paper, IconButton, Modal, Fade, Backdrop } from '@mui/material';
+import { Box, Typography, Paper, Modal, Fade, Backdrop } from '@mui/material';
 import { styled, useTheme } from '@mui/material/styles';
-import CloseIcon from '@mui/icons-material/Close';
+
 import { SectionContentProps } from '../types/profile';
 
 const ModalContainer = styled(Box)(({ theme }) => ({
@@ -85,22 +85,7 @@ const ContentContainer = styled(Box)(({ theme }) => ({
   },
 }));
 
-const CloseButton = styled(IconButton)(({ theme }) => ({
-  position: 'absolute',
-  top: theme.spacing(1),
-  right: theme.spacing(1),
-  color: theme.palette.primary.light,
-  backgroundColor: 'rgba(26, 26, 26, 0.7)',
-  '&:hover': {
-    backgroundColor: 'rgba(197, 165, 114, 0.2)',
-  },
-  [theme.breakpoints.down('sm')]: {
-    padding: '4px',
-    '& .MuiSvgIcon-root': {
-      fontSize: '1.2rem',
-    },
-  },
-}));
+
 
 const DateChip = styled(Box)(({ theme }) => ({
   display: 'inline-block',
