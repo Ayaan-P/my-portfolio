@@ -15,8 +15,8 @@ const ContentContainer = styled(Box)(({ theme }) => ({
 }));
 
 const StyledAvatar = styled(Avatar)(({ theme }) => ({
-  width: 56,
-  height: 56,
+  width: 96,
+  height: 96,
   border: `2px solid ${theme.palette.primary.main}`,
   backgroundColor: 'transparent',
 }));

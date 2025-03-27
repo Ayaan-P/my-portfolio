@@ -3,6 +3,8 @@ import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
 import PersonIcon from '@mui/icons-material/Person';
 import CodeIcon from '@mui/icons-material/Code';
+
+
 import { ProfileSectionKey } from '../types/profile';
 
 interface ProfileSectionConfig {
@@ -12,11 +14,11 @@ interface ProfileSectionConfig {
 }
 
 export const PROFILE_SECTIONS: ProfileSectionConfig[] = [
-  {
-    key: 'about',
-    label: 'About',
-    icon: PersonIcon,
-  },
+  // {
+  //   key: 'about',
+  //   label: 'About',
+  //   icon: PersonIcon,
+  // },
   {
     key: 'education',
     label: 'Education',
@@ -66,5 +68,32 @@ export const SOCIAL_LINKS: SocialLink[] = [
     key: 'build',
     label: 'dytto.app',
     url: 'https://www.dytto.app',
+  },
+];
+
+export const ABOUT_CHIPS = [
+  { 
+    key: "biotech", 
+    label: 'ML for Cancer Detection', 
+    url: 'https://linkedin.com/in/ayaanpupala',
+
+  },
+  { 
+    key: "work", 
+    label: 'Computer Engineer', 
+    url: 'https://linkedin.com/in/ayaanpupala',
+
+  },
+  { 
+    key: "dytto.app", 
+    label: 'Building dytto.app',
+    url: 'https://www.dytto.app', 
+
+  },
+  { 
+    key: "ai", 
+    label: 'Artificial Intelligence', 
+    url: 'https://www.mccormick.northwestern.edu/artificial-intelligence/people/students/2024-2025/',
+
   },
 ];

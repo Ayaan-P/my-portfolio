@@ -6,9 +6,9 @@ import UIUCImg from '../images/uiuc.jpg';
 import EpigeneresImg from '../images/epigen.jpeg';
 import NetworkImg from '../images/network.jpeg';
 import KarsunImg from '../images/karsun.jpeg';
-import GitImg from '../images/DTI.webp';
+import DTIImg from '../images/DTI.png';
 import GamePng from '../images/Cliff.png';
-import ChicagoImg from '../images/Chicago.jpg';
+import ChicagoImg from '../images/Chicago.png';
 
 
 interface ProfileData {
@@ -23,10 +23,10 @@ export const profileData: ProfileData = {
     {
       id: 1,
       sectionTitle: "Full Stack Developer and ML Engineer",
-      aboutText: `- Experienced Full Stack Developer with 3+ years in enterprise software development
-- Machine Learning Engineer focused on cancer detection research
-- MS in Artificial Intelligence candidate at Northwestern University (Fall 2024)
-- Strong foundation in computer science fundamentals and modern software development practices`,
+      aboutText: `Hi, I’m Ayaan, a software/AI engineer and founder with a passion for building products that make life easier and more insightful.
+I studied Computer Engineering at UIUC, worked as a federal contractor in DC, and later joined a biotech startup developing deep learning models for early cancer detection. Now, I’m pursuing my Master’s in AI at Northwestern, refining my expertise in machine learning, automation, and product design.
+I’m fascinated by how AI can enhance everyday experiences. This led me to create dytto, an AI-driven journaling app that seamlessly captures and analyzes daily life—solving the problem of journaling being too much effort while creating a memory bank that lasts forever.
+`,
       date: "",
       imgSrc: ProfilePic,
       about: true
@@ -46,7 +46,7 @@ export const profileData: ProfileData = {
       sectionTitle: "University of Illinois at Urbana-Champaign",
       subtitle: "Bachelor of Science in Computer Engineering",
       aboutText: "Coursework in Data Structures, Algorithms, Machine Learning and Software Engineering",
-      date: "August 2017 - December 2021",
+      date: "August 2017 - December 2020",
       imgSrc: UIUCImg
     },
     {
@@ -90,7 +90,7 @@ export const profileData: ProfileData = {
       sectionTitle: "Drug Target Interaction Prediction",
       aboutText: "XGBoost model to predict DTIs by analyzing chemical structures in the SMILES format",
       date: "2024",
-      imgSrc: GitImg,
+      imgSrc: DTIImg,
     },
     {
       id: 2,
