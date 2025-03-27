@@ -19,6 +19,7 @@ const StyledAvatar = styled(Avatar)(({ theme }) => ({
   height: 96,
   border: `2px solid ${theme.palette.primary.main}`,
   backgroundColor: 'transparent',
+  borderRadius: theme.spacing(1), // Rounded square
 }));
 
 const TextContent = styled(Box)(({ theme }) => ({

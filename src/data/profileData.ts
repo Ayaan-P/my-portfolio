@@ -1,12 +1,13 @@
 import { ProfileSection } from '../types/profile';
 import ProfilePic from "../images/profile.jpg";
 import NorthwesternImg from '../images/Northwestern.png';
-import CathedralImg from '../images/cathedral.jpg';
-import UIUCImg from '../images/uiuc.jpg';
-import EpigeneresImg from '../images/epigen.jpeg';
-import NetworkImg from '../images/network.jpeg';
-import KarsunImg from '../images/karsun.jpeg';
+import CathedralImg from '../images/Cathedral.png';
+import UIUCImg from '../images/uiuc.png';
+import EpigeneresImg from '../images/epigen.png';
+import NetworkImg from '../images/Network.png';
+import KarsunImg from '../images/Karsun.png';
 import DTIImg from '../images/DTI.png';
+import BostonImg from '../images/Boston.png';
 import GamePng from '../images/Cliff.png';
 import ChicagoImg from '../images/Chicago.png';
 
@@ -59,6 +60,14 @@ I’m fascinated by how AI can enhance everyday experiences. This led me to crea
     }
   ],
   work: [
+    {
+      id: 1,
+      sectionTitle: "American Family",
+      subtitle: "Software Engineering Intern",
+      aboutText: "Interning...",
+      date: "June 2025 - August 2025",
+      imgSrc: BostonImg
+    },
     {
       id: 1,
       sectionTitle: "Epigeneres Biotech",
