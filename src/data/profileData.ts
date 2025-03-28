@@ -267,7 +267,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     {
       id: 3,
       sectionTitle: "2D Game Development",
-      aboutText: "I designed and developed a Pokémon-inspired 2D game using the Unity",
+      aboutText: "I designed and developed a Pokémon-inspired 2D game in Unity",
       date: "2020",
       imgSrc: GamePng,
       expandedDetails: {
