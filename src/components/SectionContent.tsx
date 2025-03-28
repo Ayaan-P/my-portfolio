@@ -139,7 +139,7 @@ export default function SectionContent({
         </Typography>
         {subtitle && (
           <Typography 
-            variant="subtitle2" 
+            variant="body2" 
             sx={{ 
               color: 'rgba(255, 255, 255, 0.8)',
               fontWeight: 500,

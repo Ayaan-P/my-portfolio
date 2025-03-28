@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 import { useState, useEffect } from 'react';
 import { PhotoLibrary as PhotoLibraryIcon, Close as CloseIcon, ZoomIn as ZoomInIcon } from '@mui/icons-material';
 import ProfileCard from './ProfileCard';
-import { DriveService, DriveImage } from '../services/driveService';
+// import { DriveService, DriveImage } from '../services/driveService'; // Removed DriveService import
 
 const GalleryContainer = styled(Box)(({ theme }) => ({
   width: '100%',
@@ -182,19 +182,47 @@ const ZoomIconOverlay = styled(Box)(({ theme }) => ({
   },
 }));
 
+interface LocalImage {
+  id: string;
+  src: string;
+  title: string;
+  description?: string;
+}
+
+const localImages: LocalImage[] = [
+  { id: '1', src: 'src/images/Chicago.png', title: 'Chicago' },
+  { id: '2', src: 'src/images/Chicago1.jpg', title: 'Chicago 1' },
+  { id: '3', src: 'src/images/Cliff.png', title: 'Cliff' },
+  { id: '4', src: 'src/images/CT.png', title: 'CT' },
+  { id: '5', src: 'src/images/DTI.png', title: 'DTI' },
+  { id: '6', src: 'src/images/epigen.png', title: 'Epigen' },
+  { id: '7', src: 'src/images/epigeneres.png', title: 'Epigen Res' },
+  { id: '8', src: 'src/images/Karsun.png', title: 'Karsun' },
+  { id: '9', src: 'src/images/Network.png', title: 'Network' },
+  { id: '10', src: 'src/images/Northwestern.png', title: 'Northwestern' },
+  { id: '11', src: 'src/images/Northwestern1.png', title: 'Northwestern 1' },
+  { id: '12', src: 'src/images/uiuc.png', title: 'UIUC' },
+  { id: '13', src: 'src/images/Washington.png', title: 'Washington' },
+  { id: '14', src: 'src/images/Boston.png', title: 'Boston' },
+  { id: '15', src: 'src/images/Cathedral.png', title: 'Cathedral' },
+];
+
+
 export default function Gallery(): JSX.Element {
-  const [images, setImages] = useState<DriveImage[]>([]);
+  const [images, setImages] = useState<LocalImage[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [selectedImage, setSelectedImage] = useState<DriveImage | null>(null);
+  const [selectedImage, setSelectedImage] = useState<LocalImage | null>(null);
 
   useEffect(() => {
     const loadImages = async () => {
       try {
         setLoading(true);
-        const driveService = new DriveService();
-        const fetchedImages = await driveService.listFolderContents();
-        setImages(fetchedImages);
+        // const driveService = new DriveService(); // Removed DriveService
+        // const fetchedImages = await driveService.listFolderContents(); // Removed DriveService call
+        // setImages(fetchedImages); // Removed DriveService call
+        setImages(localImages); // Use local images instead
+        setLoading(false); // Set loading to false after setting local images
       } catch (err) {
         setError('Failed to load images. Please try again later.');
         console.error('Error loading images:', err);
@@ -206,7 +234,7 @@ export default function Gallery(): JSX.Element {
     loadImages();
   }, []);
 
-  const handleImageClick = (image: DriveImage) => {
+  const handleImageClick = (image: LocalImage) => {
     setSelectedImage(image);
   };
 
@@ -236,11 +264,11 @@ export default function Gallery(): JSX.Element {
             <CircularProgress size={60} thickness={4} />
           </LoadingContainer>
         ) : error ? (
-          <Paper 
-            elevation={0} 
-            sx={{ 
-              p: 3, 
-              mt: 4, 
+          <Paper
+            elevation={0}
+            sx={{
+              p: 3,
+              mt: 4,
               backgroundColor: 'rgba(255, 0, 0, 0.1)',
               borderRadius: 2,
               border: '1px solid rgba(255, 0, 0, 0.2)'
@@ -253,21 +281,21 @@ export default function Gallery(): JSX.Element {
         ) : (
           <ImageGrid container>
             {images.map((image, index) => (
-              <Grid 
-                item 
-                xs={12} 
-                sm={6} 
-                md={4} 
+              <Grid
+                item
+                xs={12}
+                sm={6}
+                md={4}
                 key={image.id}
-                sx={{ 
+                sx={{
                   opacity: 0,
                   animation: 'fadeIn 0.5s ease-out forwards',
                   animationDelay: `${0.1 + (index * 0.1)}s`
                 }}
               >
                 <ImageCard elevation={4} onClick={() => handleImageClick(image)}>
-                  <Image 
-                    src={image.thumbnailUrl || image.url} 
+                  <Image
+                    src={image.src} // Updated to use local image src
                     alt={image.title}
                   />
                   <ImageOverlay className="overlay">
@@ -299,7 +327,7 @@ export default function Gallery(): JSX.Element {
             </CloseButton>
             <ModalContent onClick={(e) => e.stopPropagation()}>
               <ModalImage
-                src={selectedImage.url}
+                src={selectedImage.src} // Updated to use local image src
                 alt={selectedImage.title}
               />
               <ModalCaption>
