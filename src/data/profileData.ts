@@ -79,14 +79,14 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       }
     },
     {
-      id: 2, 
+      id: 2,
       sectionTitle: "University of Illinois at Urbana-Champaign",
       subtitle: "Bachelor of Science in Computer Engineering",
       aboutText: "My undergraduate education provided me with a strong foundation in Computer Engineering. The program's rigorous curriculum covered both hardware and software aspects",
       date: "August 2017 - December 2020",
       imgSrc: UIUCImg,
       expandedDetails: {
-       
+
         skills: [
           "Data Structures & Algorithms",
           "Computer Architecture",
@@ -95,7 +95,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
           "Software Engineering"
         ],
         achievements: [
-        
+
         ],
         links: [
           {
@@ -113,9 +113,9 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       date: "May 2017",
       imgSrc: CathedralImg,
       expandedDetails: {
-        
+
         achievements: [
-          
+
         ]
       }
     }
@@ -154,7 +154,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
           "Healthcare",
           "Optimization"
         ],
-        
+
       }
     },
     {
@@ -162,7 +162,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       sectionTitle: "Karsun Solutions LLC",
       subtitle: "Software Engineer",
       aboutText: "I developed large-scale web applications for federal agencies including the Federal Aviation Administration (FAA) and General Services Administration (GSA). My work focused on modernizing legacy systems, implementing secure cloud-based solutions, and creating intuitive user interfaces for complex government operations",
-      date: "March 2021 - September 2023", 
+      date: "March 2021 - September 2023",
       imgSrc: KarsunImg,
       expandedDetails: {
 
@@ -171,9 +171,9 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
           "Cloud Migration (AWS)",
           "Agile Development Methodologies",
           "RESTful API Design",
-      
+
         ],
-        
+
       }
     },
     {
@@ -186,15 +186,39 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       expandedDetails: {
         skills: [
           "Payment Gateway Integration",
-         
+
           "API Development",
           "Testing"
         ],
-       
+
       }
     }
+
   ],
   projects: [
+    {
+      id: 5,
+      sectionTitle: "Minecraft Texture Diffusion Project",
+      aboutText: "A web application using Flask to interact with a simple diffusion model trained on Minecraft textures, allowing users to browse and generate textures.",
+      date: "2024",
+      imgSrc: require("../images/minecraft-texture-generator.png"),
+      expandedDetails: {
+        fullDescription: "This project implements a web application using Flask to interact with a simple diffusion model trained on Minecraft textures. It allows users to browse generated textures and generate new ones based on specific labels.\n\nFeatures:\n- Web Gallery: Browse previously generated Minecraft textures.\n- Texture Labeling: Retrieve a list of available texture labels from the trained model's label map.\n- Image Generation: Generate new 16x16 Minecraft textures using a simple diffusion model based on a selected label.",
+        skills: [
+          "Flask",
+          "Python",
+          "PyTorch",
+          "Diffusion Models",
+          "Web Development"
+        ],
+        links: [
+          {
+            label: "Project Repository",
+            url: "https://github.com/Ayaan-P/mctexture"
+          }
+        ]
+      }
+    },
     {
       id: 1,
       sectionTitle: "Drug Target Interaction Prediction",
@@ -228,9 +252,9 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
         skills: [
           "Generative Adversarial Networks",
           "Deep Learning",
-          
+
         ],
-        
+
         links: [
           {
             label: "Project Repository",
@@ -239,7 +263,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
         ]
       }
     },
-    
+
     {
       id: 2,
       sectionTitle: "Chicago Energy Rating Predictor",
@@ -249,12 +273,12 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       expandedDetails: {
         fullDescription: "The Chicago Energy Rating Predictor is a machine learning system I developed to forecast energy efficiency ratings for new buildings in Chicago. By analyzing architectural features, building materials, location data, and historical energy consumption patterns, the model provides accurate predictions of how new constructions will perform under the city's energy rating system. This tool helps architects and developers optimize their designs for energy efficiency before construction begins.",
         skills: [
-          "Regression Modeling", 
+          "Regression Modeling",
           "Feature Selection",
           "Ensemble Learning Methods",
         ],
         achievements: [
-     
+
         ],
         links: [
           {
@@ -280,8 +304,54 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
           "Turn-based Combat Systems",
           "Pixel Art Creation"
         ],
-       
-        
+
+
+      }
+    },
+    {
+      id: 6,
+      sectionTitle: "CreatorAI: Generative AI Content Marketplace",
+      aboutText: "A platform where creators train AI models on their style, users generate content, and creators earn royalties via NFTs.",
+      date: "2024-2025",
+      imgSrc: require("../images/logo.png"),
+      expandedDetails: {
+        fullDescription: "CreatorAI is a Web2-first platform where digital creators (starting with visual artists) can train personalized AI models on their unique style. Users can generate content using those models, and if they like the output, mint it as an NFT. The original creator automatically receives royalties whenever their model is used to generate and mint content.\n\nWhy CreatorAI?\n✨ Own Your Influence: Your style is valuable. Don’t let others copy it for free — license it with dignity.\n📦 Zero Effort Scaling: No commissions. No burnout. Just upload and let the model do the work.\n🔗 Royalties Built In: Whether it’s one fan or a thousand — every use of your model means you earn.\n🌐 Web2 Simple, Web3 Ready: You don’t need a wallet. But if you want one, we’ve got you.\n🚀 For Creators, Not Coders: No GPU setup, No prompt engineering, No crypto experience needed. Your work. Your model. Your rules.",
+        skills: [
+          "Generative AI",
+          "Machine Learning",
+          "NFTs",
+          "Web Development",
+          "Creator Economy"
+        ],
+        links: [
+          {
+            label: "CreatorAI Website",
+            url: "https://dytto-gen.vercel.app/"
+          }
+        ]
+      }
+    },
+    {
+      id: 7,
+      sectionTitle: "Social Science Agent Replication Project",
+      aboutText: "A tool for simulating social science experiments using Large Language Models (LLMs) as agents to replicate studies and explore findings sensitivity.",
+      date: "2025",
+      imgSrc: require("../images/ssarp.png"),
+      expandedDetails: {
+        fullDescription: "This project provides a tool for simulating social science experiments using Large Language Models (LLMs) as agents. It enables researchers to replicate existing studies by defining experimental conditions and agent behaviors, explore the sensitivity of experimental findings to various perturbations (e.g., changes in wording, LLM temperature, prompt structure), and generate hypotheses and pilot new experimental designs in a simulated environment. The system supports creating baseline experimental setups, applying systematic perturbations, and automatically analyzing outcomes.",
+        skills: [
+          "Large Language Models (LLMs)",
+          "Social Science Simulation",
+          "Experimental Design",
+          "Data Analysis",
+          "Python"
+        ],
+        links: [
+          {
+            label: "Project Repository",
+            url: "https://github.com/HarryL-Git/Social-Science-Replications-using-LLMs"
+          }
+        ]
       }
     }
   ]
