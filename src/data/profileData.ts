@@ -199,7 +199,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     {
       id: 5,
       sectionTitle: "Minecraft Texture Diffusion Project",
-      aboutText: "A web application using Flask to interact with a simple diffusion model trained on Minecraft textures, allowing users to browse and generate textures.",
+      aboutText: "A web application using Flask to interact with a custom diffusion model trained on Minecraft textures, allowing users to browse and generate 16x16 textures.",
       date: "2024",
       imgSrc: require("../images/minecraft-texture-generator.png"),
       expandedDetails: {
@@ -310,22 +310,22 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     },
     {
       id: 6,
-      sectionTitle: "CreatorAI: Generative AI Content Marketplace",
-      aboutText: "A platform where creators train AI models on their style, users generate content, and creators earn royalties via NFTs.",
+      sectionTitle: "dytto-gen : Generative AI Content Marketplace",
+      aboutText: "A platform where creators train AI models on their style, users generate content, and creators earn royalties.",
       date: "2024-2025",
       imgSrc: require("../images/logo.png"),
       expandedDetails: {
-        fullDescription: "CreatorAI is a Web2-first platform where digital creators (starting with visual artists) can train personalized AI models on their unique style. Users can generate content using those models, and if they like the output, mint it as an NFT. The original creator automatically receives royalties whenever their model is used to generate and mint content.\n\nWhy CreatorAI?\n✨ Own Your Influence: Your style is valuable. Don’t let others copy it for free — license it with dignity.\n📦 Zero Effort Scaling: No commissions. No burnout. Just upload and let the model do the work.\n🔗 Royalties Built In: Whether it’s one fan or a thousand — every use of your model means you earn.\n🌐 Web2 Simple, Web3 Ready: You don’t need a wallet. But if you want one, we’ve got you.\n🚀 For Creators, Not Coders: No GPU setup, No prompt engineering, No crypto experience needed. Your work. Your model. Your rules.",
+        fullDescription: "CreatorAI is a platform where digital creators (starting with visual artists) can train personalized AI models on their unique style. Users can generate content using those models. The original creator automatically receives royalties whenever their model is used to generate and mint content.",
         skills: [
           "Generative AI",
           "Machine Learning",
-          "NFTs",
+          
           "Web Development",
-          "Creator Economy"
+        
         ],
         links: [
           {
-            label: "CreatorAI Website",
+            label: "dytto-gen Website",
             url: "https://dytto-gen.vercel.app/"
           }
         ]
