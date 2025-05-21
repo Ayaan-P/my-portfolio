@@ -155,10 +155,10 @@ export default function Navbar(props: NavbarProps): JSX.Element {
       </Box>
       <Divider sx={{ my: 1, opacity: 0.1 }} />
       <List component="nav">
-        <ListItem 
-          button 
-          component={Link} 
-          to="/" 
+        <ListItem
+          button
+          component={Link}
+          to="/"
           onClick={handleCloseDrawer}
           selected={location.pathname === '/'}
         >
@@ -167,10 +167,10 @@ export default function Navbar(props: NavbarProps): JSX.Element {
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem 
-          button 
-          component={Link} 
-          to="/gallery" 
+        <ListItem
+          button
+          component={Link}
+          to="/gallery"
           onClick={handleCloseDrawer}
           selected={location.pathname === '/gallery'}
         >
@@ -179,6 +179,19 @@ export default function Navbar(props: NavbarProps): JSX.Element {
           </ListItemIcon>
           <ListItemText primary="Gallery" />
         </ListItem>
+        <ListItem
+          button
+          component={Link}
+          to="/blog"
+          onClick={handleCloseDrawer}
+          selected={location.pathname === '/blog'}
+        >
+          <ListItemIcon>
+            {/* You might want a different icon for the blog */}
+            <PhotoLibraryIcon sx={{ color: theme.palette.primary.main }} />
+          </ListItemIcon>
+          <ListItemText primary="Blog" />
+        </ListItem>
       </List>
     </Box>
   );
@@ -186,13 +199,13 @@ export default function Navbar(props: NavbarProps): JSX.Element {
 
   return (
     <HideOnScroll {...props} children={
-      <StyledAppBar 
+      <StyledAppBar
         position="fixed"
         sx={{
           py: 0.25,
           boxShadow: scrolled ? 3 : 0,
-          borderBottom: scrolled 
-            ? '1px solid rgba(197, 165, 114, 0.2)' 
+          borderBottom: scrolled
+            ? '1px solid rgba(197, 165, 114, 0.2)'
             : '1px solid rgba(255, 255, 255, 0.05)',
         }}
       >
@@ -233,6 +246,15 @@ export default function Navbar(props: NavbarProps): JSX.Element {
                     disableElevation
                   >
                     Gallery
+                  </NavButton>
+                </Link>
+                <Link to="/blog" style={{ textDecoration: 'none' }}>
+                  <NavButton
+                    className={isActive('/blog')}
+                    startIcon={<PhotoLibraryIcon />} // Consider changing this icon
+                    disableElevation
+                  >
+                    Blog
                   </NavButton>
                 </Link>
               </Box>

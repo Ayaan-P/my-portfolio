@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { theme } from './styles/theme';
 import Profile from './components/Profile';
 import Gallery from './components/Gallery';
+import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
 import './App.css';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
@@ -59,9 +61,9 @@ function App(): JSX.Element {
             onClose={handleDrawerToggle}
           >
             <List>
-              {['Profile'].map((text, index) => (
+              {['Profile', 'Blog'].map((text) => (
                 <ListItem key={text} disablePadding>
-                  <ListItemButton component={Link} to={text === 'Profile' ? '/' : '/gallery'}>
+                  <ListItemButton component={Link} to={text === 'Profile' ? '/' : `/${text.toLowerCase()}`}>
                     <ListItemText primary={text} />
                   </ListItemButton>
                 </ListItem>
@@ -73,6 +75,8 @@ function App(): JSX.Element {
               <Routes>
                 <Route path="/" element={<Profile />} />
                 <Route path="/gallery" element={<Gallery />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/blog/:id" element={<BlogPost />} />
               </Routes>
             </Container>
           </Box>
