@@ -1,10 +1,7 @@
 import { SvgIconComponent } from '@mui/icons-material';
 import SchoolIcon from '@mui/icons-material/School';
 import WorkIcon from '@mui/icons-material/Work';
-
 import CodeIcon from '@mui/icons-material/Code';
-
-
 import { ProfileSectionKey } from '../types/profile';
 
 interface ProfileSectionConfig {
@@ -14,11 +11,6 @@ interface ProfileSectionConfig {
 }
 
 export const PROFILE_SECTIONS: ProfileSectionConfig[] = [
-  // {
-  //   key: 'about',
-  //   label: 'About',
-  //   icon: PersonIcon,
-  // },
   {
     key: 'education',
     label: 'Education',
@@ -41,7 +33,6 @@ interface SocialLink {
   label: string;
   url: string;
 }
-
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
@@ -73,27 +64,28 @@ export const SOCIAL_LINKS: SocialLink[] = [
 
 export const ABOUT_CHIPS = [
   { 
+    key: "northwestern", 
+    label: 'MS AI @ Northwestern', 
+    url: 'https://www.mccormick.northwestern.edu/artificial-intelligence/people/students/2024-2025/',
+  },
+  { 
     key: "biotech", 
     label: 'ML for Cancer Detection', 
     url: 'https://linkedin.com/in/ayaanpupala',
-
   },
   { 
     key: "work", 
-    label: 'Computer Engineer', 
+    label: 'Software Engineer', 
     url: 'https://linkedin.com/in/ayaanpupala',
-
   },
   { 
-    key: "dytto.app", 
-    label: 'Building dytto.app',
-    url: 'https://www.dytto.app', 
-
+    key: "founder", 
+    label: 'Founder @ dytto', 
+    url: 'https://www.dytto.app',
   },
   { 
     key: "ai", 
-    label: 'Artificial Intelligence', 
-    url: 'https://www.mccormick.northwestern.edu/artificial-intelligence/people/students/2024-2025/',
-
+    label: 'AI Research', 
+    url: 'https://github.com/Ayaan-P',
   },
 ];
