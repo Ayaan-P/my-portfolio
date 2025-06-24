@@ -1,6 +1,5 @@
 import { Paper, Avatar, Typography, Box, Container, Chip } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import SocialLinks from './SocialLinks';
 import ProfileContent from './ProfileContent';
 import AboutChips from './AboutChips';
 import ProfilePic from "../images/profile.jpg";
@@ -110,15 +109,11 @@ export default function Profile(): JSX.Element {
                 AI Engineer & Product Builder
               </Typography>
               <StatusChip 
-                label="🎓 MS AI Student at Northwestern" 
+                label="MS AI Student at Northwestern" 
                 size="small"
               />
             </SubtitleContainer>
           </NameContainer>
-          
-          <Box className="fade-in-delay-2" sx={{ display: 'flex', justifyContent: 'center', width: '100%', mb: 2 }}>
-            <SocialLinks />
-          </Box>
           
           <Box className="fade-in-delay-3" sx={{ display: 'flex', justifyContent: 'center', width: '100%', mb: 3 }}>
             <AboutChips />
