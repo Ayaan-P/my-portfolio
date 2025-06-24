@@ -267,22 +267,40 @@ export default function ExpandedSectionView({
                 </DateChip>
               )}
               
-              <Typography
-                variant="body1"
-                component={about ? 'pre' : 'p'}
-                sx={{ 
-                  whiteSpace: about ? 'pre-line' : 'normal',
-                  lineHeight: 1.8,
-                  color: 'rgba(255, 255, 255, 0.9)',
-                  fontSize: '1.05rem',
-                  [theme.breakpoints.down('sm')]: {
-                    fontSize: '0.95rem',
-                    lineHeight: 1.7,
-                  },
-                }}
-              >
-                {aboutText}
-              </Typography>
+              {about ? (
+                <Box
+                  component="pre"
+                  sx={{ 
+                    whiteSpace: 'pre-line',
+                    lineHeight: 1.8,
+                    color: 'rgba(255, 255, 255, 0.9)',
+                    fontSize: '1.05rem',
+                    fontFamily: 'inherit',
+                    margin: 0,
+                    [theme.breakpoints.down('sm')]: {
+                      fontSize: '0.95rem',
+                      lineHeight: 1.7,
+                    },
+                  }}
+                >
+                  {aboutText}
+                </Box>
+              ) : (
+                <Typography
+                  variant="body1"
+                  sx={{ 
+                    lineHeight: 1.8,
+                    color: 'rgba(255, 255, 255, 0.9)',
+                    fontSize: '1.05rem',
+                    [theme.breakpoints.down('sm')]: {
+                      fontSize: '0.95rem',
+                      lineHeight: 1.7,
+                    },
+                  }}
+                >
+                  {aboutText}
+                </Typography>
+              )}
               
               {expandedDetails && !about && (
                 <>
@@ -330,10 +348,9 @@ export default function ExpandedSectionView({
                       </SectionHeader>
                       <Box component="ul" sx={{ pl: 2.5, mt: 0.5 }}>
                         {expandedDetails.achievements.map((achievement, index) => (
-                          <Typography 
+                          <Box 
                             key={index} 
                             component="li" 
-                            variant="body2" 
                             sx={{ 
                               color: 'rgba(255, 255, 255, 0.9)',
                               marginBottom: theme.spacing(1),
@@ -350,7 +367,7 @@ export default function ExpandedSectionView({
                             }}
                           >
                             {achievement}
-                          </Typography>
+                          </Box>
                         ))}
                       </Box>
                     </Box>
@@ -363,9 +380,8 @@ export default function ExpandedSectionView({
                       </SectionHeader>
                       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
                         {expandedDetails.links.map((link, index) => (
-                          <Typography 
+                          <Box
                             key={index} 
-                            variant="body2" 
                             component="a"
                             href={link.url}
                             target="_blank"
@@ -377,6 +393,7 @@ export default function ExpandedSectionView({
                               alignItems: 'center',
                               gap: theme.spacing(0.5),
                               fontWeight: 500,
+                              fontSize: '0.95rem',
                               transition: 'all 0.3s ease',
                               '&:hover': {
                                 color: theme.palette.primary.main,
@@ -389,7 +406,7 @@ export default function ExpandedSectionView({
                             }}
                           >
                             {link.label} →
-                          </Typography>
+                          </Box>
                         ))}
                       </Box>
                     </Box>

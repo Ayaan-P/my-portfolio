@@ -112,23 +112,6 @@ const SectionSubtitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const SectionDescription = styled(Typography)(({ theme }) => ({
-  color: 'rgba(255, 255, 255, 0.8)',
-  lineHeight: 1.7,
-  fontSize: '0.95rem',
-  marginTop: theme.spacing(0.5),
-  
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '0.8rem',
-    lineHeight: 1.5,
-    // Truncate text on mobile for cleaner look
-    display: '-webkit-box',
-    WebkitLineClamp: 2,
-    WebkitBoxOrient: 'vertical',
-    overflow: 'hidden',
-  },
-}));
-
 const DateChip = styled(Box)(({ theme }) => ({
   position: 'absolute',
   top: theme.spacing(2.5),
@@ -208,14 +191,49 @@ export default function SectionContent({
             </SectionSubtitle>
           )}
           
-          <SectionDescription
-            component={about ? 'pre' : 'p'}
-            sx={{ 
-              whiteSpace: about ? 'pre-line' : 'normal',
-            }}
-          >
-            {aboutText}
-          </SectionDescription>
+          {about ? (
+            <Box
+              component="pre"
+              sx={{ 
+                whiteSpace: 'pre-line',
+                color: 'rgba(255, 255, 255, 0.8)',
+                lineHeight: 1.7,
+                fontSize: '0.95rem',
+                marginTop: theme.spacing(0.5),
+                fontFamily: 'inherit',
+                margin: 0,
+                
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: '0.8rem',
+                  lineHeight: 1.5,
+                },
+              }}
+            >
+              {aboutText}
+            </Box>
+          ) : (
+            <Typography
+              variant="body2"
+              sx={{ 
+                color: 'rgba(255, 255, 255, 0.8)',
+                lineHeight: 1.7,
+                fontSize: '0.95rem',
+                marginTop: theme.spacing(0.5),
+                
+                [theme.breakpoints.down('sm')]: {
+                  fontSize: '0.8rem',
+                  lineHeight: 1.5,
+                  // Truncate text on mobile for cleaner look
+                  display: '-webkit-box',
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: 'vertical',
+                  overflow: 'hidden',
+                },
+              }}
+            >
+              {aboutText}
+            </Typography>
+          )}
         </TextContent>
         
         {date && !about && (
