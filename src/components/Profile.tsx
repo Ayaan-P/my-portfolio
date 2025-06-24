@@ -1,4 +1,4 @@
-import { Paper, Avatar, Typography, Box, Container, Chip } from '@mui/material';
+import { Paper, Avatar, Typography, Box, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import SocialLinks from './SocialLinks';
 import ProfileContent from './ProfileContent';
@@ -57,30 +57,6 @@ const NameContainer = styled(Box)(({ theme }) => ({
   width: '100%',
 }));
 
-const StatusChip = styled(Chip)(({ theme }) => ({
-  backgroundColor: 'rgba(76, 175, 80, 0.1)',
-  color: '#4CAF50',
-  border: '1px solid rgba(76, 175, 80, 0.3)',
-  fontWeight: 600,
-  fontSize: '0.85rem',
-  marginTop: theme.spacing(1),
-  '&:hover': {
-    backgroundColor: 'rgba(76, 175, 80, 0.2)',
-    transform: 'translateY(-2px)',
-  },
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '0.75rem',
-  },
-}));
-
-const SubtitleContainer = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: theme.spacing(1),
-  marginBottom: theme.spacing(2),
-}));
-
 export default function Profile(): JSX.Element {
   return (
     <Container maxWidth="lg" className="fade-in">
@@ -95,24 +71,21 @@ export default function Profile(): JSX.Element {
             <Typography variant="h2" color="primary" className="fade-in-delay-1">
               Ayaan Pupala
             </Typography>
-            <SubtitleContainer className="fade-in-delay-2">
-              <Typography 
-                variant="h5" 
-                color="textSecondary" 
-                sx={{ 
-                  opacity: 0.9, 
-                  fontWeight: 500,
-                  textAlign: 'center',
-                  lineHeight: 1.3
-                }}
-              >
-                AI Engineer & Product Builder
-              </Typography>
-              <StatusChip 
-                label="MS AI Student at Northwestern" 
-                size="small"
-              />
-            </SubtitleContainer>
+            <Typography 
+              variant="h5" 
+              color="textSecondary" 
+              gutterBottom
+              sx={{ 
+                opacity: 0.9, 
+                mt: 1,
+                fontWeight: 500,
+                textAlign: 'center',
+                lineHeight: 1.3
+              }}
+              className="fade-in-delay-2"
+            >
+              AI Engineer & Product Builder
+            </Typography>
           </NameContainer>
           
           <Box className="fade-in-delay-2" sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
