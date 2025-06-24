@@ -1,7 +1,7 @@
 import { Paper, Avatar, Typography, Box, Container, Chip } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import SocialLinks from './SocialLinks';
 import ProfileContent from './ProfileContent';
-import AboutChips from './AboutChips';
 import ProfilePic from "../images/profile.jpg";
 
 const ProfileContainer = styled(Paper)(({ theme }) => ({
@@ -115,8 +115,8 @@ export default function Profile(): JSX.Element {
             </SubtitleContainer>
           </NameContainer>
           
-          <Box className="fade-in-delay-3" sx={{ display: 'flex', justifyContent: 'center', width: '100%', mb: 3 }}>
-            <AboutChips />
+          <Box className="fade-in-delay-2" sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+            <SocialLinks />
           </Box>
         </Box>
         
