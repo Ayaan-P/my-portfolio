@@ -30,11 +30,9 @@ export const profileData: ProfileData = {
       sectionTitle: "AI Engineer & Product Builder",
       aboutText: `Hi, I'm Ayaan, a software/AI engineer and founder passionate about building products that make life easier and more insightful.
 
-I studied Computer Engineering at UIUC, worked as a federal contractor in DC, and later joined a biotech startup developing deep learning models for early cancer detection. Now, I'm pursuing my Master's in AI at Northwestern, refining my expertise in machine learning, automation, and product design.
+I studied Computer Engineering at UIUC, worked as a federal contractor in DC, and later joined a biotech startup developing deep learning models for early cancer detection. Now, I'm pursuing my Master's in AI at Northwestern.
 
-I'm fascinated by how AI can enhance everyday experiences. This led me to create dytto, an AI-driven journaling app that seamlessly captures and analyzes daily life—solving the problem of journaling being too much effort while creating a memory bank that lasts forever.
-
-Currently exploring the intersection of generative AI and creative industries through various projects and research initiatives.`,
+I'm fascinated by how AI can enhance everyday experiences. This led me to create dytto, an AI-driven journaling app that seamlessly captures and analyzes daily life.`,
       date: "",
       imgSrc: ProfilePic,
       about: true,
@@ -71,7 +69,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 1,
       sectionTitle: "Northwestern University",
       subtitle: "Master of Science in Artificial Intelligence",
-      aboutText: "Pursuing an advanced degree in Artificial Intelligence with focus on deep learning, computer vision, and natural language processing. Coursework includes advanced neural networks, reinforcement learning, and AI ethics.",
+      aboutText: "Advanced degree in AI with focus on deep learning, computer vision, and natural language processing.",
       date: "September 2024 - December 2025",
       imgSrc: NorthwesternImg,
       expandedDetails: {
@@ -107,7 +105,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 2,
       sectionTitle: "University of Illinois at Urbana-Champaign",
       subtitle: "Bachelor of Science in Computer Engineering",
-      aboutText: "Comprehensive education in Computer Engineering covering both hardware and software aspects. Strong foundation in algorithms, data structures, computer architecture, and software engineering principles.",
+      aboutText: "Comprehensive education in Computer Engineering covering hardware and software fundamentals.",
       date: "August 2017 - December 2020",
       imgSrc: UIUCImg,
       expandedDetails: {
@@ -139,7 +137,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 3,
       sectionTitle: "Cathedral and John Connon School",
       subtitle: "ICSE, ISC Science",
-      aboutText: "Completed secondary education with focus on Science and Mathematics. Strong foundation in analytical thinking and problem-solving that laid the groundwork for engineering studies.",
+      aboutText: "Secondary education with focus on Science and Mathematics.",
       date: "May 2017",
       imgSrc: CathedralImg,
       expandedDetails: {
@@ -157,7 +155,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 1,
       sectionTitle: "American Family Insurance",
       subtitle: "Software Engineering Intern",
-      aboutText: "Upcoming summer internship focusing on developing innovative software solutions in the insurance technology space. Will work on modernizing legacy systems and implementing AI-driven features.",
+      aboutText: "Upcoming summer internship focusing on innovative software solutions in insurance technology.",
       date: "June 2025 - August 2025",
       imgSrc: BostonImg,
       expandedDetails: {
@@ -180,7 +178,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 2,
       sectionTitle: "Epigeneres Biotech",
       subtitle: "Machine Learning Engineer",
-      aboutText: "Developed and optimized deep learning models for early cancer detection using medical imaging data. Worked with cross-functional teams to translate research into production-ready healthcare solutions.",
+      aboutText: "Developed deep learning models for early cancer detection using medical imaging data.",
       date: "October 2023 - August 2024",
       imgSrc: EpigeneresImg,
       expandedDetails: {
@@ -213,7 +211,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 3,
       sectionTitle: "Karsun Solutions LLC",
       subtitle: "Software Engineer",
-      aboutText: "Developed large-scale web applications for federal agencies including the Federal Aviation Administration (FAA) and General Services Administration (GSA). Specialized in modernizing legacy systems and implementing secure, scalable solutions.",
+      aboutText: "Developed large-scale web applications for federal agencies including FAA and GSA.",
       date: "March 2021 - September 2023",
       imgSrc: KarsunImg,
       expandedDetails: {
@@ -246,7 +244,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 4,
       sectionTitle: "Network International LLC",
       subtitle: "Software Engineering Intern",
-      aboutText: "Contributed to the development of robust payment processing systems for one of the Middle East and Africa's leading payment solutions providers. Gained experience in fintech and secure transaction processing.",
+      aboutText: "Contributed to payment processing systems for Middle East and Africa's leading payment provider.",
       date: "May 2018 - July 2018",
       imgSrc: NetworkImg,
       expandedDetails: {
@@ -278,7 +276,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       id: 1,
       sectionTitle: "Habit & Mood Tracker",
       subtitle: "Personal Analytics Dashboard",
-      aboutText: "A comprehensive web application for tracking daily habits, mood patterns, and personal metrics. Features interactive visualizations, streak tracking, and insights powered by data analysis.",
+      aboutText: "Web app for tracking daily habits and mood patterns with interactive visualizations.",
       date: "2024",
       imgSrc: BlankImg,
       expandedDetails: {
@@ -312,8 +310,8 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     {
       id: 2,
       sectionTitle: "Drug Target Interaction Prediction",
-      subtitle: "Machine Learning for Drug Discovery",
-      aboutText: "Advanced ML model that analyzes chemical structures in SMILES format to predict drug-target interactions. Accelerates drug discovery by computationally identifying promising candidates before laboratory testing.",
+      subtitle: "ML for Drug Discovery",
+      aboutText: "ML model analyzing chemical structures to predict drug-target interactions, accelerating drug discovery.",
       date: "2024",
       imgSrc: DTIImg,
       expandedDetails: {
@@ -347,9 +345,9 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     },
     {
       id: 3,
-      sectionTitle: "Minecraft Texture Diffusion Generator",
-      subtitle: "AI-Powered Game Asset Creation",
-      aboutText: "Web application using Flask and custom diffusion models to generate Minecraft textures. Features a gallery browser and label-based generation system for creating 16x16 game assets.",
+      sectionTitle: "Minecraft Texture Generator",
+      subtitle: "AI-Powered Game Assets",
+      aboutText: "Web app using diffusion models to generate Minecraft textures with label-based creation.",
       date: "2024",
       imgSrc: MinecraftImg,
       expandedDetails: {
@@ -383,9 +381,9 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     },
     {
       id: 4,
-      sectionTitle: "Low Dose CT Scan Enhancement",
+      sectionTitle: "CT Scan Enhancement",
       subtitle: "Medical Image Super-Resolution",
-      aboutText: "Deep learning model using Generative Adversarial Networks (GANs) to enhance the resolution and quality of low-dose CT scans, improving diagnostic capabilities while reducing radiation exposure.",
+      aboutText: "GAN-based model enhancing low-dose CT scan quality while reducing radiation exposure.",
       date: "2024",
       imgSrc: CTImg,
       expandedDetails: {
@@ -415,9 +413,9 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     },
     {
       id: 5,
-      sectionTitle: "Chicago Energy Rating Predictor",
+      sectionTitle: "Chicago Energy Predictor",
       subtitle: "Urban Sustainability Analytics",
-      aboutText: "Machine learning system that predicts Chicago energy efficiency ratings for new buildings using architectural features, materials, and location data. Helps optimize designs for sustainability.",
+      aboutText: "ML system predicting building energy ratings to optimize designs for sustainability.",
       date: "2024",
       imgSrc: ChicagoImg,
       expandedDetails: {
@@ -451,9 +449,9 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     },
     {
       id: 6,
-      sectionTitle: "2D Pokémon-Inspired Game",
+      sectionTitle: "2D Pokémon Game",
       subtitle: "Unity Game Development",
-      aboutText: "Complete 2D game developed in Unity featuring turn-based combat, character progression, and custom pixel art. Demonstrates game design principles and C# programming skills.",
+      aboutText: "Complete 2D game in Unity with turn-based combat and custom pixel art.",
       date: "2020",
       imgSrc: GamePng,
       expandedDetails: {
@@ -488,9 +486,9 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     },
     {
       id: 7,
-      sectionTitle: "dytto-gen: AI Content Marketplace",
-      subtitle: "Generative AI Platform",
-      aboutText: "Revolutionary platform where creators train AI models on their unique style, users generate content using those models, and creators earn royalties automatically. Bridging AI and creative industries.",
+      sectionTitle: "dytto-gen",
+      subtitle: "AI Content Marketplace",
+      aboutText: "Platform where creators train AI models on their style and earn royalties from generated content.",
       date: "2024-2025",
       imgSrc: LogoImg,
       expandedDetails: {
@@ -526,8 +524,8 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     {
       id: 8,
       sectionTitle: "Social Science Agent Replication",
-      subtitle: "LLM-Based Research Tool",
-      aboutText: "Innovative tool for simulating social science experiments using Large Language Models as agents. Enables researchers to replicate studies and explore finding sensitivity at scale.",
+      subtitle: "LLM Research Tool",
+      aboutText: "Tool for simulating social science experiments using LLMs as agents for research replication.",
       date: "2025",
       imgSrc: SSARPImg,
       expandedDetails: {

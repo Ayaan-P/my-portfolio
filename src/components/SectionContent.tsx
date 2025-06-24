@@ -55,7 +55,7 @@ const ContentContainer = styled(Paper)(({ theme }) => ({
   
   [theme.breakpoints.down('sm')]: {
     gap: theme.spacing(2),
-    padding: theme.spacing(2.5),
+    padding: theme.spacing(2),
     borderRadius: theme.spacing(2),
   },
 }));
@@ -71,8 +71,8 @@ const StyledAvatar = styled(Avatar)(({ theme }) => ({
   overflow: 'hidden',
   
   [theme.breakpoints.down('sm')]: {
-    width: 80,
-    height: 80,
+    width: 70,
+    height: 70,
     borderRadius: theme.spacing(1.5),
     border: `2px solid rgba(197, 165, 114, 0.3)`,
   },
@@ -108,7 +108,24 @@ const SectionSubtitle = styled(Typography)(({ theme }) => ({
   transition: 'color 0.3s ease',
   
   [theme.breakpoints.down('sm')]: {
-    fontSize: '0.9rem',
+    fontSize: '0.85rem',
+  },
+}));
+
+const SectionDescription = styled(Typography)(({ theme }) => ({
+  color: 'rgba(255, 255, 255, 0.8)',
+  lineHeight: 1.7,
+  fontSize: '0.95rem',
+  marginTop: theme.spacing(0.5),
+  
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '0.8rem',
+    lineHeight: 1.5,
+    // Truncate text on mobile for cleaner look
+    display: '-webkit-box',
+    WebkitLineClamp: 2,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
   },
 }));
 
@@ -191,23 +208,14 @@ export default function SectionContent({
             </SectionSubtitle>
           )}
           
-          <Typography
-            variant="body2"
+          <SectionDescription
             component={about ? 'pre' : 'p'}
             sx={{ 
               whiteSpace: about ? 'pre-line' : 'normal',
-              color: 'rgba(255, 255, 255, 0.8)',
-              lineHeight: 1.7,
-              fontSize: '0.95rem',
-              marginTop: theme.spacing(0.5),
-              [theme.breakpoints.down('sm')]: {
-                fontSize: '0.85rem',
-                lineHeight: 1.6,
-              },
             }}
           >
             {aboutText}
-          </Typography>
+          </SectionDescription>
         </TextContent>
         
         {date && !about && (

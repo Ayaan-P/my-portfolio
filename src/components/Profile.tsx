@@ -25,7 +25,7 @@ const ProfileContainer = styled(Paper)(({ theme }) => ({
     zIndex: -1,
   },
   [theme.breakpoints.down('sm')]: {
-    padding: theme.spacing(3, 2),
+    padding: theme.spacing(2, 1.5),
     minHeight: 200,
   },
 }));
@@ -43,8 +43,8 @@ const ProfileAvatar = styled(Avatar)(({ theme }) => ({
     border: '4px solid rgba(197, 165, 114, 0.5)',
   },
   [theme.breakpoints.down('sm')]: {
-    width: 140,
-    height: 140,
+    width: 120,
+    height: 120,
     marginBottom: theme.spacing(2),
     border: '3px solid rgba(197, 165, 114, 0.3)',
   },
@@ -55,6 +55,31 @@ const NameContainer = styled(Box)(({ theme }) => ({
   marginBottom: theme.spacing(2),
   animation: 'fadeIn 0.8s ease-out forwards',
   width: '100%',
+}));
+
+const MainTitle = styled(Typography)(({ theme }) => ({
+  fontWeight: 700,
+  fontSize: '3rem',
+  background: 'linear-gradient(45deg, #D4BC8B 30%, #97783B 90%)',
+  WebkitBackgroundClip: 'text',
+  WebkitTextFillColor: 'transparent',
+  textShadow: '0 2px 10px rgba(197, 165, 114, 0.3)',
+  
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '2rem',
+  },
+}));
+
+const Subtitle = styled(Typography)(({ theme }) => ({
+  opacity: 0.9,
+  fontWeight: 500,
+  textAlign: 'center',
+  lineHeight: 1.3,
+  fontSize: '1.3rem',
+  
+  [theme.breakpoints.down('sm')]: {
+    fontSize: '1rem',
+  },
 }));
 
 export default function Profile(): JSX.Element {
@@ -68,24 +93,16 @@ export default function Profile(): JSX.Element {
             className="fade-in"
           />
           <NameContainer>
-            <Typography variant="h2" color="primary" className="fade-in-delay-1">
+            <MainTitle className="fade-in-delay-1">
               Ayaan Pupala
-            </Typography>
-            <Typography 
-              variant="h5" 
+            </MainTitle>
+            <Subtitle 
               color="textSecondary" 
               gutterBottom
-              sx={{ 
-                opacity: 0.9, 
-                mt: 1,
-                fontWeight: 500,
-                textAlign: 'center',
-                lineHeight: 1.3
-              }}
               className="fade-in-delay-2"
             >
               AI Engineer & Product Builder
-            </Typography>
+            </Subtitle>
           </NameContainer>
           
           <Box className="fade-in-delay-2" sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
