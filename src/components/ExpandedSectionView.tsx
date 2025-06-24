@@ -170,17 +170,6 @@ const DateChip = styled(Box)(({ theme }) => ({
   },
 }));
 
-const MainDescription = styled(Typography)(({ theme }) => ({
-  lineHeight: 1.8,
-  color: 'rgba(255, 255, 255, 0.9)',
-  fontSize: '1.05rem',
-  
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '0.95rem',
-    lineHeight: 1.7,
-  },
-}));
-
 const SectionHeader = styled(Typography)(({ theme }) => ({
   color: theme.palette.primary.light,
   fontWeight: 700,
@@ -216,43 +205,6 @@ const SkillChip = styled(Box)(({ theme }) => ({
     padding: '6px 12px',
     fontSize: '0.8rem',
     borderRadius: '10px',
-  },
-}));
-
-const AchievementItem = styled(Typography)(({ theme }) => ({
-  color: 'rgba(255, 255, 255, 0.9)',
-  marginBottom: theme.spacing(1),
-  fontSize: '0.95rem',
-  lineHeight: 1.6,
-  
-  '&::marker': {
-    color: theme.palette.primary.main
-  },
-  
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '0.9rem',
-    marginBottom: theme.spacing(0.75),
-    lineHeight: 1.5,
-  },
-}));
-
-const LinkItem = styled(Typography)(({ theme }) => ({
-  color: theme.palette.primary.light,
-  textDecoration: 'none',
-  display: 'inline-flex',
-  alignItems: 'center',
-  gap: theme.spacing(0.5),
-  fontWeight: 500,
-  transition: 'all 0.3s ease',
-  
-  '&:hover': {
-    color: theme.palette.primary.main,
-    textDecoration: 'underline',
-    transform: 'translateX(4px)',
-  },
-  
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '0.9rem',
   },
 }));
 
@@ -315,14 +267,22 @@ export default function ExpandedSectionView({
                 </DateChip>
               )}
               
-              <MainDescription
+              <Typography
+                variant="body1"
                 component={about ? 'pre' : 'p'}
                 sx={{ 
                   whiteSpace: about ? 'pre-line' : 'normal',
+                  lineHeight: 1.8,
+                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontSize: '1.05rem',
+                  [theme.breakpoints.down('sm')]: {
+                    fontSize: '0.95rem',
+                    lineHeight: 1.7,
+                  },
                 }}
               >
                 {aboutText}
-              </MainDescription>
+              </Typography>
               
               {expandedDetails && !about && (
                 <>
@@ -370,12 +330,27 @@ export default function ExpandedSectionView({
                       </SectionHeader>
                       <Box component="ul" sx={{ pl: 2.5, mt: 0.5 }}>
                         {expandedDetails.achievements.map((achievement, index) => (
-                          <AchievementItem 
+                          <Typography 
                             key={index} 
-                            component="li"
+                            component="li" 
+                            variant="body2" 
+                            sx={{ 
+                              color: 'rgba(255, 255, 255, 0.9)',
+                              marginBottom: theme.spacing(1),
+                              fontSize: '0.95rem',
+                              lineHeight: 1.6,
+                              '&::marker': {
+                                color: theme.palette.primary.main
+                              },
+                              [theme.breakpoints.down('sm')]: {
+                                fontSize: '0.9rem',
+                                marginBottom: theme.spacing(0.75),
+                                lineHeight: 1.5,
+                              },
+                            }}
                           >
                             {achievement}
-                          </AchievementItem>
+                          </Typography>
                         ))}
                       </Box>
                     </Box>
@@ -388,15 +363,33 @@ export default function ExpandedSectionView({
                       </SectionHeader>
                       <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
                         {expandedDetails.links.map((link, index) => (
-                          <LinkItem 
+                          <Typography 
                             key={index} 
+                            variant="body2" 
                             component="a"
                             href={link.url}
                             target="_blank"
                             rel="noopener noreferrer"
+                            sx={{ 
+                              color: theme.palette.primary.light,
+                              textDecoration: 'none',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: theme.spacing(0.5),
+                              fontWeight: 500,
+                              transition: 'all 0.3s ease',
+                              '&:hover': {
+                                color: theme.palette.primary.main,
+                                textDecoration: 'underline',
+                                transform: 'translateX(4px)',
+                              },
+                              [theme.breakpoints.down('sm')]: {
+                                fontSize: '0.9rem',
+                              },
+                            }}
                           >
                             {link.label} →
-                          </LinkItem>
+                          </Typography>
                         ))}
                       </Box>
                     </Box>

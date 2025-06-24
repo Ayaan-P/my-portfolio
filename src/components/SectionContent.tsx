@@ -112,18 +112,6 @@ const SectionSubtitle = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const SectionDescription = styled(Typography)(({ theme }) => ({
-  color: 'rgba(255, 255, 255, 0.8)',
-  lineHeight: 1.7,
-  fontSize: '0.95rem',
-  marginTop: theme.spacing(0.5),
-  
-  [theme.breakpoints.down('sm')]: {
-    fontSize: '0.85rem',
-    lineHeight: 1.6,
-  },
-}));
-
 const DateChip = styled(Box)(({ theme }) => ({
   position: 'absolute',
   top: theme.spacing(2.5),
@@ -203,14 +191,23 @@ export default function SectionContent({
             </SectionSubtitle>
           )}
           
-          <SectionDescription
+          <Typography
+            variant="body2"
             component={about ? 'pre' : 'p'}
             sx={{ 
               whiteSpace: about ? 'pre-line' : 'normal',
+              color: 'rgba(255, 255, 255, 0.8)',
+              lineHeight: 1.7,
+              fontSize: '0.95rem',
+              marginTop: theme.spacing(0.5),
+              [theme.breakpoints.down('sm')]: {
+                fontSize: '0.85rem',
+                lineHeight: 1.6,
+              },
             }}
           >
             {aboutText}
-          </SectionDescription>
+          </Typography>
         </TextContent>
         
         {date && !about && (
