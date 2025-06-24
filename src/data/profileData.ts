@@ -11,6 +11,10 @@ import BostonImg from '../images/Boston.png';
 import GamePng from '../images/Cliff.png';
 import ChicagoImg from '../images/Chicago.png';
 import CTImg from '../images/CT.png';
+import BlankImg from '../images/blank.png';
+import LogoImg from '../images/logo.png';
+import SSARPImg from '../images/ssarp.png';
+import MinecraftImg from '../images/minecraft-texture-generator.png';
 
 interface ProfileData {
   about: ProfileSection[];
@@ -276,7 +280,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       subtitle: "Personal Analytics Dashboard",
       aboutText: "A comprehensive web application for tracking daily habits, mood patterns, and personal metrics. Features interactive visualizations, streak tracking, and insights powered by data analysis.",
       date: "2024",
-      imgSrc: require("../images/blank.png"),
+      imgSrc: BlankImg,
       expandedDetails: {
         fullDescription: "The Habit & Mood Tracker is a sophisticated personal analytics platform that helps users understand their daily patterns and behaviors. Built with modern web technologies, it provides intuitive interfaces for data entry and powerful visualizations for insights.\n\nKey features include:\n- Daily habit tracking with customizable metrics\n- Mood logging with correlation analysis\n- Streak tracking and achievement systems\n- Interactive charts and trend analysis\n- Export capabilities for personal data\n- Responsive design for mobile and desktop use",
         skills: [
@@ -347,7 +351,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       subtitle: "AI-Powered Game Asset Creation",
       aboutText: "Web application using Flask and custom diffusion models to generate Minecraft textures. Features a gallery browser and label-based generation system for creating 16x16 game assets.",
       date: "2024",
-      imgSrc: require("../images/minecraft-texture-generator.png"),
+      imgSrc: MinecraftImg,
       expandedDetails: {
         fullDescription: "This project demonstrates the application of diffusion models to game asset creation. By training on Minecraft's distinctive 16x16 texture format, the model learns to generate new textures that maintain the game's aesthetic while providing creative variations.\n\nThe web interface allows users to browse generated textures, select from available labels, and create new textures on demand. This showcases how AI can assist game developers and modders in creating consistent, high-quality assets.",
         skills: [
@@ -488,7 +492,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       subtitle: "Generative AI Platform",
       aboutText: "Revolutionary platform where creators train AI models on their unique style, users generate content using those models, and creators earn royalties automatically. Bridging AI and creative industries.",
       date: "2024-2025",
-      imgSrc: require("../images/logo.png"),
+      imgSrc: LogoImg,
       expandedDetails: {
         fullDescription: "dytto-gen represents the future of creative collaboration between humans and AI. The platform enables digital creators to monetize their unique styles by training personalized AI models, while users gain access to diverse creative tools.\n\nThe system automatically handles model training, content generation, and royalty distribution, creating a sustainable ecosystem where creativity is rewarded. This addresses the growing concern about AI replacing artists by instead empowering them with new revenue streams.",
         skills: [
@@ -525,7 +529,7 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
       subtitle: "LLM-Based Research Tool",
       aboutText: "Innovative tool for simulating social science experiments using Large Language Models as agents. Enables researchers to replicate studies and explore finding sensitivity at scale.",
       date: "2025",
-      imgSrc: require("../images/ssarp.png"),
+      imgSrc: SSARPImg,
       expandedDetails: {
         fullDescription: "This cutting-edge research tool addresses reproducibility challenges in social science by enabling large-scale simulation of human behavior studies. Using LLMs as proxies for human participants, researchers can quickly test hypotheses, explore parameter sensitivity, and validate findings.\n\nThe system supports complex experimental designs, automatic data collection, and statistical analysis. This approach could revolutionize social science research by making large-scale studies more accessible and cost-effective.",
         skills: [
