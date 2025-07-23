@@ -273,40 +273,61 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
   ],
   projects: [
     {
-      id: 1,
-      sectionTitle: "Habit & Mood Tracker",
-      subtitle: "Personal Analytics Dashboard",
-      aboutText: "Web app for tracking daily habits and mood patterns with interactive visualizations.",
-      date: "2024",
-      imgSrc: BlankImg,
-      expandedDetails: {
-        fullDescription: "The Habit & Mood Tracker is a sophisticated personal analytics platform that helps users understand their daily patterns and behaviors. Built with modern web technologies, it provides intuitive interfaces for data entry and powerful visualizations for insights.\n\nKey features include:\n- Daily habit tracking with customizable metrics\n- Mood logging with correlation analysis\n- Streak tracking and achievement systems\n- Interactive charts and trend analysis\n- Export capabilities for personal data\n- Responsive design for mobile and desktop use",
-        skills: [
-          "React.js",
-          "TypeScript",
-          "Chart.js/D3.js",
-          "Local Storage API",
-          "Responsive Design",
-          "Data Visualization",
-          "Progressive Web App (PWA)"
-        ],
-        achievements: [
-          "Deployed live application with real user feedback",
-          "Implemented advanced data visualization techniques",
-          "Created intuitive UX for daily habit formation"
-        ],
-        links: [
-          {
-            label: "Live Demo",
-            url: "https://shimmering-raindrop-76c9a0.netlify.app/"
-          },
-          {
-            label: "View Source Code",
-            url: "https://github.com/Ayaan-P/habit-tracker"
-          }
-        ]
-      }
-    },
+    id: 1,
+    sectionTitle: "Dytto - AI Memory Assistant",
+    subtitle: "Personal Journal & Story Generation Platform",
+    aboutText: "AI-powered journaling app that transforms daily 
+  experiences into meaningful stories using advanced language 
+  models and voice interaction.",
+    date: "2025",
+    imgSrc: BlankImg, // You'll need to add your app screenshot
+    expandedDetails: {
+      fullDescription: "Dytto is a sophisticated AI-powered 
+  personal journal that automatically captures and transforms 
+  your daily experiences into meaningful narratives. Using 
+  advanced language models including Gemini 2.0 and ElevenLabs 
+  Conversational AI, it creates a comprehensive memory system 
+  that understands context, patterns, and relationships.\n\nKey 
+  features include:\n- AI story generation from daily activities 
+  and context\n- Real-time voice chat with 75ms latency using 
+  ElevenLabs\n- Vector-based memory search with pgvector 
+  integration\n- Personalized recommendations based on behavior 
+  analysis\n- Multi-modal chat interface (text, voice, story 
+  modes)\n- Automated daily story creation with push 
+  notifications\n- Advanced context service with pattern 
+  recognition\n- Privacy-first architecture with secure data 
+  handling",
+      skills: [
+        "React Native/Expo",
+        "TypeScript",
+        "Python/FastAPI",
+        "PostgreSQL/Supabase",
+        "Gemini 2.0 Flash",
+        "ElevenLabs Conversational AI",
+        "Vector Embeddings (pgvector)",
+        "Firebase Push Notifications",
+        
+        "RESTful API Design"
+      ],
+      achievements: [
+        
+        "Implemented advanced vector search with semantic memory retrieval",
+        "Created comprehensive context analysis system with behavioral patterns",
+        "Deployed scalable backend architecture handling real-time AI processing",
+        "Achieved seamless voice-to-text integration with natural conversation flow"
+      ],
+      links: [
+        {
+          label: "App Landing Page",
+          url: "https://dytto.app"
+        },
+        {
+          label: "TestFlight Beta",
+          url: "https://testflight.apple.com/join/zPhFJzsr"
+        }
+      ]
+    }
+  },
     {
       id: 2,
       sectionTitle: "Drug Target Interaction Prediction",
