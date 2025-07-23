@@ -282,8 +282,8 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
     date: "2025",
     imgSrc: BlankImg, // You'll need to add your app screenshot
     expandedDetails: {
-      fullDescription: "Dytto is a sophisticated AI-powered personal journal that automatically captures and transforms your daily experiences into meaningful narratives. Using advanced language models including Gemini 2.0 and ElevenLabs Conversational AI, it creates a comprehensive memory system that understands context, patterns, and relationships.\nKey features include:\n- AI story generation from daily activities and context\n- Real-time voice chat with 75ms latency using ElevenLabs\n- Vector-based memory search with pgvector integration\n- Personalized recommendations based on behavior analysis\n- Multi-modal chat interface (text, voice, story modes)\n- Automated daily story creation with push notifications\n- Advanced context service with pattern recognition\n- Privacy-first architecture with secure data handling",
-      skills: [
+      fullDescription: "Dytto is a sophisticated AI-powered personal journal that automatically captures and transforms your daily experiences into meaningful narratives.",
+         skills: [
         "React Native/Expo",
         "TypeScript",
         "Python/FastAPI",
