@@ -274,13 +274,13 @@ The culmination of my passion and expertise is dytto, an AI-powered journaling a
   projects: [
     {
     id: 1,
-    sectionTitle: "Dytto - AI Memory Assistant",
+    sectionTitle: "dytto - AI Memory Assistant",
     subtitle: "Personal Journal & Story Generation Platform",
     aboutText: `AI-powered journaling app that transforms daily experiences into meaningful stories using advanced language models and voice interaction.`,
     date: "2025",
-    imgSrc: BlankImg, // You'll need to add your app screenshot
+    imgSrc: LogoImg, // You'll need to add your app screenshot
     expandedDetails: {
-      fullDescription: "Dytto is a sophisticated AI-powered personal journal that automatically captures and transforms your daily experiences into meaningful narratives.",
+      fullDescription: "dytto is a sophisticated AI-powered personal journal that automatically captures and transforms your daily experiences into meaningful narratives.",
          skills: [
         "React Native/Expo",
         "TypeScript",
